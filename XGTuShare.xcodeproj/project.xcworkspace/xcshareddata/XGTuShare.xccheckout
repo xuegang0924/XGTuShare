@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D2BEE6A2-28CC-48A6-95C0-E429EA1D75BD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XGTuShare</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>484E41CA507DB28E2F3DE8D2611444D68877AB4F</key>
+		<string>https://github.com/xuegang0924/XGTuShare.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XGTuShare.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>484E41CA507DB28E2F3DE8D2611444D68877AB4F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xuegang0924/XGTuShare.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>484E41CA507DB28E2F3DE8D2611444D68877AB4F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>484E41CA507DB28E2F3DE8D2611444D68877AB4F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>XGTuShare</string>
+		</dict>
+	</array>
+</dict>
+</plist>
