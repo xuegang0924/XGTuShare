@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D2916D01AF91FC50087CD2E /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916CF1AF91FC50087CD2E /* BaseNavigationViewController.m */; };
-		1D2916D81AFA64FC0087CD2E /* FocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916D71AFA64FC0087CD2E /* FocusView.m */; };
 		1D2916DB1AFA72EE0087CD2E /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916DA1AFA72EE0087CD2E /* ListView.m */; };
 		1D2916DF1AFA73600087CD2E /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916DD1AFA73600087CD2E /* ListTableViewCell.m */; };
 		1D2916E01AFA73600087CD2E /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2916DE1AFA73600087CD2E /* ListTableViewCell.xib */; };
@@ -16,6 +15,7 @@
 		1D2916E61AFA74090087CD2E /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916E51AFA74090087CD2E /* ListTableView.m */; };
 		1D2916ED1AFA75550087CD2E /* CategoryMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916E91AFA75550087CD2E /* CategoryMenuView.m */; };
 		1D2916EE1AFA75550087CD2E /* FocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916EC1AFA75550087CD2E /* FocusView.m */; };
+		1D2916F21AFA78AB0087CD2E /* TopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916F11AFA78AB0087CD2E /* TopMenuView.m */; };
 		1D295DC21AFA050C00A147E2 /* comment_have_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295CF21AFA050700A147E2 /* comment_have_down@2x.png */; };
 		1D295DC31AFA050C00A147E2 /* comment_have_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295CF31AFA050700A147E2 /* comment_have_down@3x.png */; };
 		1D295DC41AFA050C00A147E2 /* comment_have_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295CF41AFA050700A147E2 /* comment_have_up@2x.png */; };
@@ -254,8 +254,6 @@
 /* Begin PBXFileReference section */
 		1D2916CE1AF91FC50087CD2E /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		1D2916CF1AF91FC50087CD2E /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
-		1D2916D61AFA64FC0087CD2E /* FocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusView.h; sourceTree = "<group>"; };
-		1D2916D71AFA64FC0087CD2E /* FocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusView.m; sourceTree = "<group>"; };
 		1D2916D91AFA72EE0087CD2E /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
 		1D2916DA1AFA72EE0087CD2E /* ListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListView.m; sourceTree = "<group>"; };
 		1D2916DC1AFA73600087CD2E /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
@@ -269,6 +267,8 @@
 		1D2916E91AFA75550087CD2E /* CategoryMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuView.m; sourceTree = "<group>"; };
 		1D2916EB1AFA75550087CD2E /* FocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusView.h; sourceTree = "<group>"; };
 		1D2916EC1AFA75550087CD2E /* FocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusView.m; sourceTree = "<group>"; };
+		1D2916F01AFA78AB0087CD2E /* TopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMenuView.h; sourceTree = "<group>"; };
+		1D2916F11AFA78AB0087CD2E /* TopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMenuView.m; sourceTree = "<group>"; };
 		1D295CF21AFA050700A147E2 /* comment_have_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment_have_down@2x.png"; sourceTree = "<group>"; };
 		1D295CF31AFA050700A147E2 /* comment_have_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment_have_down@3x.png"; sourceTree = "<group>"; };
 		1D295CF41AFA050700A147E2 /* comment_have_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment_have_up@2x.png"; sourceTree = "<group>"; };
@@ -530,15 +530,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D2916D41AFA64E80087CD2E /* FocusView */ = {
-			isa = PBXGroup;
-			children = (
-				1D2916D61AFA64FC0087CD2E /* FocusView.h */,
-				1D2916D71AFA64FC0087CD2E /* FocusView.m */,
-			);
-			path = FocusView;
-			sourceTree = "<group>";
-		};
 		1D2916D51AFA64E80087CD2E /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +562,15 @@
 				1D2916EC1AFA75550087CD2E /* FocusView.m */,
 			);
 			path = FocusView;
+			sourceTree = "<group>";
+		};
+		1D2916EF1AFA78AB0087CD2E /* TopMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				1D2916F01AFA78AB0087CD2E /* TopMenuView.h */,
+				1D2916F11AFA78AB0087CD2E /* TopMenuView.m */,
+			);
+			path = TopMenuView;
 			sourceTree = "<group>";
 		};
 		1D295CF11AFA050700A147E2 /* images */ = {
@@ -952,9 +952,9 @@
 		1D93930D1AF8FD320081FADA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1D2916EF1AFA78AB0087CD2E /* TopMenuView */,
 				1D2916E71AFA75550087CD2E /* CategoryMenuView */,
 				1D2916EA1AFA75550087CD2E /* FocusView */,
-				1D2916D41AFA64E80087CD2E /* FocusView */,
 				1D2916D51AFA64E80087CD2E /* ListView */,
 				1D9393151AF8FD710081FADA /* HomeViewController.h */,
 				1D9393161AF8FD710081FADA /* HomeViewController.m */,
@@ -1327,9 +1327,9 @@
 				1D2916E61AFA74090087CD2E /* ListTableView.m in Sources */,
 				1D2916ED1AFA75550087CD2E /* CategoryMenuView.m in Sources */,
 				1D2916DB1AFA72EE0087CD2E /* ListView.m in Sources */,
-				1D2916D81AFA64FC0087CD2E /* FocusView.m in Sources */,
 				1D9393181AF8FD710081FADA /* HomeViewController.m in Sources */,
 				1D93931D1AF8FD850081FADA /* FindViewController.m in Sources */,
+				1D2916F21AFA78AB0087CD2E /* TopMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
