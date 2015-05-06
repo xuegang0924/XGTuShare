@@ -96,7 +96,7 @@
 - (void)tabBarSelected:(UIButton *)button
 {
     _selectedButton = button;
-    button.selected = YES;
+//    button.selected = YES;
     [button showsTouchWhenHighlighted];
 }
 @end

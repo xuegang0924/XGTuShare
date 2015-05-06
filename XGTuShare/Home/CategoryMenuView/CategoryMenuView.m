@@ -35,10 +35,11 @@
         UIButton *cateBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         cateBtn.frame = CGRectMake(ScreenX, BUTTON_HEIGHT * i, self.frame.size.width, BUTTON_HEIGHT);
         
-        [cateBtn setImage:[UIImage imageNamed: IMG_mine_p] forState:UIControlStateNormal];
-        [cateBtn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
+//        [cateBtn setImage:[UIImage imageNamed: IMG_mine_p] forState:UIControlStateNormal];
+//        [cateBtn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
         cateBtn.tag = i;
-        cateBtn.titleLabel.text = names[i];
+//        cateBtn.titleLabel.text = @"sss";//names[i];
+        [cateBtn setTitle:names[i] forState:UIControlStateNormal];
         cateBtn.titleLabel.textColor = [UIColor blackColor];
         cateBtn.backgroundColor = [UIColor purpleColor];
         [cateBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
