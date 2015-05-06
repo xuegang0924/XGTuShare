@@ -10,7 +10,6 @@
 #import "DDMenuController.h"
 
 @interface AppDelegate ()
-@property (nonatomic,strong) CategoryMenuViewController *categoryViewCtroller;
 
 @end
 
@@ -25,14 +24,14 @@
     [self.window makeKeyAndVisible];
     
     _mainViewCtroller = [[MainViewController alloc] init];
-    _categoryViewCtroller = [[CategoryMenuViewController alloc] init];
+//    _categoryViewCtroller = [[CategoryMenuViewController alloc] init];
     
     DDMenuController *dMenuController = [[DDMenuController alloc] initWithRootViewController:_mainViewCtroller];
-    dMenuController.leftViewController = _categoryViewCtroller;
-    dMenuController.panOriginX = 10;
+//    dMenuController.leftViewController = _categoryViewCtroller;
+//    dMenuController.panOriginX = 10;
     
     
-    self.window.rootViewController = dMenuController;
+    self.window.rootViewController = _mainViewCtroller;
     
     
     return YES;

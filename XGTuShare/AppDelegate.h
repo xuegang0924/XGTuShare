@@ -9,7 +9,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
-#import "CategoryMenuViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
