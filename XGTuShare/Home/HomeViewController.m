@@ -47,6 +47,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
         _focusView = [[FocusView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth, 200)];
 //        _listView = [[ListView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY+200, ScreenWidth, 300)];
         [self setupDataArray];
+
     }
     return self;
 }
@@ -54,11 +55,13 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.frame = CGRectMake(ScreenX,_focusView.frame.size.height-20, ScreenWidth, ScreenHeight-_focusView.frame.size.height-self.tabBarController.view.frame.size.height);
+    self.tableView1.frame = CGRectMake(ScreenX,_focusView.frame.size.height-20, ScreenWidth, ScreenHeight-_focusView.frame.size.height);
     // 1.注册cell
-    [self.tableView registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    [self.tableView1 registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    self.tableView1.delegate = self;
+    self.tableView1.dataSource = self;
+    self.tableView1.alpha = 0.5f;
+    self.tableView1.backgroundColor = [UIColor clearColor];
     
     // 2.集成刷新控件
     [self setupRefresh];
@@ -181,21 +184,21 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 - (void)setupRefresh
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.tableView1 addHeaderWithTarget:self action:@selector(headerRereshing)];
 #warning 自动刷新(一进入程序就下拉刷新)
-    [self.tableView headerBeginRefreshing];
+    [self.tableView1 headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    [self.tableView1 addFooterWithTarget:self action:@selector(footerRereshing)];
     
     // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
-    self.tableView.headerPullToRefreshText = @"下拉可以刷新了";
-    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
-    self.tableView.headerRefreshingText = @"MJ哥正在帮你刷新中,不客气";
+    self.tableView1.headerPullToRefreshText = @"下拉可以刷新了";
+    self.tableView1.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.tableView1.headerRefreshingText = @"MJ哥正在帮你刷新中,不客气";
     
-    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
-    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
-    self.tableView.footerRefreshingText = @"MJ哥正在帮你加载中,不客气";
+    self.tableView1.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.tableView1.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.tableView1.footerRefreshingText = @"MJ哥正在帮你加载中,不客气";
 }
 
 #pragma mark 开始进入刷新状态
@@ -209,10 +212,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
-        [self.tableView reloadData];
+        [self.tableView1 reloadData];
         
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView headerEndRefreshing];
+        [self.tableView1 headerEndRefreshing];
     });
 }
 
@@ -226,10 +229,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
-        [self.tableView reloadData];
+        [self.tableView1 reloadData];
         
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView footerEndRefreshing];
+        [self.tableView1 footerEndRefreshing];
     });
 }
 
@@ -258,6 +261,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     NSDictionary *dataDict = self.dataArray[indexPath.row];
     // Sample image
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
+    cell.backgroundColor = [UIColor clearColor];
     [cell setupCellWithData:dataDict andImage:image];
     
 //    cell.textLabel.text = self.fakeData[indexPath.row];

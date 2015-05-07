@@ -1794,7 +1794,7 @@
 					"$(PROJECT_DIR)/XGTuShare/lib/third/openssl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1285b684-8bc3-4ef6-acb0-713af1f9caa7";
+				PROVISIONING_PROFILE = "8b61f589-6904-4cd5-81d2-35063df40b8c";
 			};
 			name = Debug;
 		};
@@ -1815,7 +1815,7 @@
 					"$(PROJECT_DIR)/XGTuShare/lib/third/openssl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1285b684-8bc3-4ef6-acb0-713af1f9caa7";
+				PROVISIONING_PROFILE = "8b61f589-6904-4cd5-81d2-35063df40b8c";
 			};
 			name = Release;
 		};

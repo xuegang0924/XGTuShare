@@ -173,7 +173,10 @@
     
     // Set values
     self.nameLabel.text = nameString;
+    self.nameLabel.textColor = [UIColor whiteColor];
     self.companyLabel.text = companyString;
+    self.companyLabel.textColor = [UIColor whiteColor];
+
     self.bioLabel.text = bioString;
     
     self.sampleImageView.image = image;
