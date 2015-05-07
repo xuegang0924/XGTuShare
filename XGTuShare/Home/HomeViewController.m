@@ -10,6 +10,14 @@
 #import "CategoryMenuView.h"
 #import "TopMenuView.h"
 #import "FocusView.h"
+#import "ListView.h"
+#import "ListTableViewCell.h"
+#import "MJRefresh.h"
+
+
+#define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
+NSString *const MJTableViewCellIdentifier = @"Cell";
+
 
 @interface HomeViewController ()
 
@@ -18,8 +26,13 @@
 @property(nonatomic,strong)CategoryMenuView *categoryMenuView;
 @property(nonatomic,strong)TopMenuView *topMenuView;
 @property(nonatomic,strong)FocusView *focusView;
+@property(nonatomic,strong)ListView *listView;
 @property(nonatomic,assign)BOOL iscategoryMenuViewShowed;
 @property(nonatomic,assign)BOOL isTopMenuShowed;
+
+@property (strong, nonatomic) NSMutableArray *fakeData;
+
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -32,12 +45,25 @@
         _categoryMenuView = [[CategoryMenuView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, 100, ScreenHeight)];
         _topMenuView = [[TopMenuView alloc] initWithFrame:CGRectMake(ScreenWidth-100 -200,ScreenY+40, 200, 50)];
         _focusView = [[FocusView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth, 200)];
+//        _listView = [[ListView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY+200, ScreenWidth, 300)];
+        [self setupDataArray];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.frame = CGRectMake(ScreenX,_focusView.frame.size.height-20, ScreenWidth, ScreenHeight-_focusView.frame.size.height-self.tabBarController.view.frame.size.height);
+    // 1.注册cell
+    [self.tableView registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    // 2.集成刷新控件
+    [self setupRefresh];
+    
+    
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor blackColor];
     self.navigationController.navigationBarHidden = YES;
@@ -51,8 +77,6 @@
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.modalPresentationCapturesStatusBarAppearance = NO;
     
-//    _categoryMenuView = [[CategoryMenuView alloc] init];
-//    _categoryMenuView.frame = CGRectMake(0, 0, 100, ScreenHeight);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,5 +156,141 @@
     
 
 }
+
+
+/////////////////////////////////////////////
+
+/**
+ *  数据的懒加载
+ */
+- (NSMutableArray *)fakeData
+{
+    if (!_fakeData) {
+        self.fakeData = [NSMutableArray array];
+        
+        for (int i = 0; i<12; i++) {
+            [self.fakeData addObject:MJRandomData];
+        }
+    }
+    return _fakeData;
+}
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+#warning 自动刷新(一进入程序就下拉刷新)
+    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.tableView.headerRefreshingText = @"MJ哥正在帮你刷新中,不客气";
+    
+    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.tableView.footerRefreshingText = @"MJ哥正在帮你加载中,不客气";
+}
+
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    // 1.添加假数据
+    for (int i = 0; i<5; i++) {
+//        [self.fakeData insertObject:MJRandomData atIndex:i];
+    }
+    
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView headerEndRefreshing];
+    });
+}
+
+- (void)footerRereshing
+{
+    // 1.添加假数据
+    for (int i = 0; i<5; i++) {
+//        [self.dataArray addObject:MJRandomData];
+    }
+    
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView footerEndRefreshing];
+    });
+}
+
+- (void)setupDataArray {
+    
+    
+    self.dataArray = [NSMutableArray array];
+    
+    // Load sample data into the array
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"SampleData" ofType:@"plist"];
+    [self.dataArray addObjectsFromArray:[NSArray arrayWithContentsOfFile:filePath]];
+}
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
+    ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
+    
+    // Load data
+    NSDictionary *dataDict = self.dataArray[indexPath.row];
+    // Sample image
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
+    [cell setupCellWithData:dataDict andImage:image];
+    
+//    cell.textLabel.text = self.fakeData[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"hahhahh");
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    __weak typeof(self) weakSelf = self;
+    CGSize defaultSize = DEFAULT_CELL_SIZE;
+    
+    // Create our size
+    CGSize cellSize = [ListTableViewCell sizeForCellWithDefaultSize:defaultSize setupCellBlock:^id(id<HTKDynamicResizingCellProtocol> cellToSetup) {
+        // set values - there's no need to set the image here
+        // because we have height and width constraints set, so
+        // nil image will end up measuring to that size. If you don't
+        // set the image contraints, it will end up being it's 1x intrinsic
+        // size of the image, so you should set a default image when you
+        // create the cell.
+        NSDictionary *dataDict = weakSelf.dataArray[indexPath.row];
+        [((ListTableViewCell *)cellToSetup) setupCellWithData:dataDict andImage:nil];
+        
+        // return cell
+        return cellToSetup;
+    }];
+    
+    return cellSize.height;
+}
+
 
 @end

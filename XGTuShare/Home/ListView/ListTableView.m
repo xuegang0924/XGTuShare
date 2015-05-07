@@ -7,15 +7,26 @@
 //
 
 #import "ListTableView.h"
+//#import "MJTestViewController.h"
+
+
+
+@interface ListTableView ()
+/**
+ *  存放假数据
+ */
+@end
 
 @implementation ListTableView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    
+
 }
-*/
+
+
+
 
 @end
