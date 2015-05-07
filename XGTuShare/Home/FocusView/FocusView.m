@@ -59,6 +59,7 @@
     _scrolView.showsVerticalScrollIndicator = YES;
     _scrolView.scrollEnabled = YES;
     _scrolView.directionalLockEnabled = YES;
+    
     [self addSubview:_scrolView];
     
     

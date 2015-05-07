@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ListCellView.h"
+#import "HTKDynamicResizingTableViewCell.h"
+#import "HTKDynamicResizingCellProtocol.h"
 
 
-@interface ListTableViewCell : UITableViewCell
+@interface ListTableViewCell : HTKDynamicResizingTableViewCell
+
+- (void)setupCellWithData:(NSDictionary *)data andImage:(UIImage *)image;
 
 @end

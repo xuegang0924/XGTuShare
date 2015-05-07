@@ -1,5 +1,5 @@
 //
-//  ListCellView.h
+//  ListTableViewController.h
 //  XGTuShare
 //
 //  Created by xuegang on 15/5/7.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListCellView : UIView
+@interface ListTableViewController : UITableViewController
 
 @end

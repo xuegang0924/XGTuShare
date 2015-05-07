@@ -46,7 +46,10 @@
     [self _initTopView];
     [self _initShowCatergoryView];
     
-    
+    //解决scrollview偏移
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.modalPresentationCapturesStatusBarAppearance = NO;
     
 //    _categoryMenuView = [[CategoryMenuView alloc] init];
 //    _categoryMenuView.frame = CGRectMake(0, 0, 100, ScreenHeight);

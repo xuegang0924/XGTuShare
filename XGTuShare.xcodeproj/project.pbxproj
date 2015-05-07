@@ -11,7 +11,6 @@
 		1D2916DB1AFA72EE0087CD2E /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916DA1AFA72EE0087CD2E /* ListView.m */; };
 		1D2916DF1AFA73600087CD2E /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916DD1AFA73600087CD2E /* ListTableViewCell.m */; };
 		1D2916E01AFA73600087CD2E /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2916DE1AFA73600087CD2E /* ListTableViewCell.xib */; };
-		1D2916E31AFA73AF0087CD2E /* ListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916E21AFA73AF0087CD2E /* ListCellView.m */; };
 		1D2916E61AFA74090087CD2E /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916E51AFA74090087CD2E /* ListTableView.m */; };
 		1D2916ED1AFA75550087CD2E /* CategoryMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916E91AFA75550087CD2E /* CategoryMenuView.m */; };
 		1D2916EE1AFA75550087CD2E /* FocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916EC1AFA75550087CD2E /* FocusView.m */; };
@@ -219,6 +218,10 @@
 		1D295E8A1AFA050C00A147E2 /* user_head_save_failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295DBF1AFA050C00A147E2 /* user_head_save_failed@2x.png */; };
 		1D295E8B1AFA050C00A147E2 /* user_head_save_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295DC01AFA050C00A147E2 /* user_head_save_success@2x.png */; };
 		1D295E8C1AFA050C00A147E2 /* user_head_saving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D295DC11AFA050C00A147E2 /* user_head_saving@2x.png */; };
+		1D3CCDF31AFB5E93008702F0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CCDF11AFB5E93008702F0 /* ListTableViewController.m */; };
+		1D3CCDF41AFB5E93008702F0 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D3CCDF21AFB5E93008702F0 /* ListTableViewController.xib */; };
+		1D3CCDFE1AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CCDF81AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m */; };
+		1D3CCDFF1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CCDFD1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m */; };
 		1D9392A21AF8F75C0081FADA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9392A11AF8F75C0081FADA /* main.m */; };
 		1D9392A51AF8F75C0081FADA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9392A41AF8F75C0081FADA /* AppDelegate.m */; };
 		1D9392AB1AF8F75C0081FADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9392A91AF8F75C0081FADA /* Main.storyboard */; };
@@ -259,8 +262,6 @@
 		1D2916DC1AFA73600087CD2E /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		1D2916DD1AFA73600087CD2E /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
 		1D2916DE1AFA73600087CD2E /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
-		1D2916E11AFA73AF0087CD2E /* ListCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCellView.h; sourceTree = "<group>"; };
-		1D2916E21AFA73AF0087CD2E /* ListCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCellView.m; sourceTree = "<group>"; };
 		1D2916E41AFA74090087CD2E /* ListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
 		1D2916E51AFA74090087CD2E /* ListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableView.m; sourceTree = "<group>"; };
 		1D2916E81AFA75550087CD2E /* CategoryMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuView.h; sourceTree = "<group>"; };
@@ -475,6 +476,14 @@
 		1D295FDA1AFA0CD100A147E2 /* CommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommenDefine.h; sourceTree = "<group>"; };
 		1D295FDB1AFA0D3300A147E2 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1D295FDF1AFA0FF600A147E2 /* ConstantDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantDefine.h; sourceTree = "<group>"; };
+		1D3CCDF01AFB5E93008702F0 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		1D3CCDF11AFB5E93008702F0 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		1D3CCDF21AFB5E93008702F0 /* ListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
+		1D3CCDF71AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTKDynamicResizingCollectionViewCell.h; sourceTree = "<group>"; };
+		1D3CCDF81AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTKDynamicResizingCollectionViewCell.m; sourceTree = "<group>"; };
+		1D3CCDFA1AFB5ECB008702F0 /* HTKDynamicResizingCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTKDynamicResizingCellProtocol.h; sourceTree = "<group>"; };
+		1D3CCDFC1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTKDynamicResizingTableViewCell.h; sourceTree = "<group>"; };
+		1D3CCDFD1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTKDynamicResizingTableViewCell.m; sourceTree = "<group>"; };
 		1D93929C1AF8F75C0081FADA /* XGTuShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XGTuShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9392A01AF8F75C0081FADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D9392A11AF8F75C0081FADA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -533,6 +542,7 @@
 		1D2916D51AFA64E80087CD2E /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				1D3CCDF51AFB5ECB008702F0 /* HTKDynamicResizingCell */,
 				1D2916D91AFA72EE0087CD2E /* ListView.h */,
 				1D2916DA1AFA72EE0087CD2E /* ListView.m */,
 				1D2916E41AFA74090087CD2E /* ListTableView.h */,
@@ -540,8 +550,9 @@
 				1D2916DC1AFA73600087CD2E /* ListTableViewCell.h */,
 				1D2916DD1AFA73600087CD2E /* ListTableViewCell.m */,
 				1D2916DE1AFA73600087CD2E /* ListTableViewCell.xib */,
-				1D2916E11AFA73AF0087CD2E /* ListCellView.h */,
-				1D2916E21AFA73AF0087CD2E /* ListCellView.m */,
+				1D3CCDF01AFB5E93008702F0 /* ListTableViewController.h */,
+				1D3CCDF11AFB5E93008702F0 /* ListTableViewController.m */,
+				1D3CCDF21AFB5E93008702F0 /* ListTableViewController.xib */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -830,6 +841,42 @@
 				1D295FDF1AFA0FF600A147E2 /* ConstantDefine.h */,
 			);
 			path = Commen;
+			sourceTree = "<group>";
+		};
+		1D3CCDF51AFB5ECB008702F0 /* HTKDynamicResizingCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CCDF61AFB5ECB008702F0 /* CollectionView */,
+				1D3CCDF91AFB5ECB008702F0 /* Protocol */,
+				1D3CCDFB1AFB5ECB008702F0 /* TableView */,
+			);
+			path = HTKDynamicResizingCell;
+			sourceTree = "<group>";
+		};
+		1D3CCDF61AFB5ECB008702F0 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CCDF71AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.h */,
+				1D3CCDF81AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		1D3CCDF91AFB5ECB008702F0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CCDFA1AFB5ECB008702F0 /* HTKDynamicResizingCellProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1D3CCDFB1AFB5ECB008702F0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CCDFC1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.h */,
+				1D3CCDFD1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		1D9392931AF8F75C0081FADA = {
@@ -1267,6 +1314,7 @@
 				1D9392B01AF8F75C0081FADA /* LaunchScreen.xib in Resources */,
 				1D295E1B1AFA050C00A147E2 /* PPQ_ShareIcon_WeixinSelect@2x.png in Resources */,
 				1D295E491AFA050C00A147E2 /* searchbar_p@3x.png in Resources */,
+				1D3CCDF41AFB5E93008702F0 /* ListTableViewController.xib in Resources */,
 				1D295E411AFA050C00A147E2 /* recommend_icon_default@3x.png in Resources */,
 				1D9393191AF8FD710081FADA /* HomeViewController.xib in Resources */,
 				1D295E2D1AFA050C00A147E2 /* channel_p_p.png in Resources */,
@@ -1319,17 +1367,19 @@
 				1D93930B1AF8FCB40081FADA /* UIViewExt.m in Sources */,
 				1D9393091AF8FCB40081FADA /* CustomCatagory.m in Sources */,
 				1D9392F61AF8F9CB0081FADA /* DDMenuController.m in Sources */,
-				1D2916E31AFA73AF0087CD2E /* ListCellView.m in Sources */,
 				1D93930A1AF8FCB40081FADA /* UIUtils.m in Sources */,
 				1D9392A21AF8F75C0081FADA /* main.m in Sources */,
 				1D9393221AF8FD970081FADA /* MineViewController.m in Sources */,
 				1D2916D01AF91FC50087CD2E /* BaseNavigationViewController.m in Sources */,
+				1D3CCDFF1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m in Sources */,
 				1D2916E61AFA74090087CD2E /* ListTableView.m in Sources */,
 				1D2916ED1AFA75550087CD2E /* CategoryMenuView.m in Sources */,
 				1D2916DB1AFA72EE0087CD2E /* ListView.m in Sources */,
+				1D3CCDFE1AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
 				1D9393181AF8FD710081FADA /* HomeViewController.m in Sources */,
 				1D93931D1AF8FD850081FADA /* FindViewController.m in Sources */,
 				1D2916F21AFA78AB0087CD2E /* TopMenuView.m in Sources */,
+				1D3CCDF31AFB5E93008702F0 /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
