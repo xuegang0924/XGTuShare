@@ -26,7 +26,7 @@
     _mainViewCtroller = [[MainViewController alloc] init];
 //    _categoryViewCtroller = [[CategoryMenuViewController alloc] init];
     
-    DDMenuController *dMenuController = [[DDMenuController alloc] initWithRootViewController:_mainViewCtroller];
+//    DDMenuController *dMenuController = [[DDMenuController alloc] initWithRootViewController:_mainViewCtroller];
 //    dMenuController.leftViewController = _categoryViewCtroller;
 //    dMenuController.panOriginX = 10;
     

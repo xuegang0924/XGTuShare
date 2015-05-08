@@ -14,6 +14,7 @@
 #import "ListTableViewCell.h"
 #import "MJRefresh.h"
 
+#import "DetailViewController.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 NSString *const MJTableViewCellIdentifier = @"Cell";
@@ -54,14 +55,17 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.hidesBottomBarWhenPushed = YES;
+
     
-    self.tableView1.frame = CGRectMake(ScreenX,_focusView.frame.size.height-20, ScreenWidth, ScreenHeight-_focusView.frame.size.height);
+    self.tableView1.frame = CGRectMake(ScreenX,20, ScreenWidth, ScreenHeight-_focusView.frame.size.height);
     // 1.注册cell
     [self.tableView1 registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
     self.tableView1.delegate = self;
     self.tableView1.dataSource = self;
     self.tableView1.alpha = 0.5f;
     self.tableView1.backgroundColor = [UIColor clearColor];
+    self.tableView1.hidden = NO;
     
     // 2.集成刷新控件
     [self setupRefresh];
@@ -160,6 +164,50 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 }
 
+
+
+- (void)hideTabBar {
+//    if (self.tabBarController.tabBar.hidden == YES) {
+//        return;
+//    }
+//    UIView *contentView;
+//    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+//    else
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+//    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
+//    self.tabBarController.tabBar.hidden = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSendHideTabBarMessage object:nil];
+    
+}
+
+
+- (void)showTabBar
+
+{
+//    if (self.tabBarController.tabBar.hidden == NO)
+//    {
+//        return;
+//    }
+//    UIView *contentView;
+//    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]])
+//        
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+//    
+//    else
+//        
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+//    contentView.frame = CGRectMake(contentView.bounds.origin.x, contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height - self.tabBarController.tabBar.frame.size.height);
+//    self.tabBarController.tabBar.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSendShowTabBarMessage object:nil];
+
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self showTabBar];
+}
 
 /////////////////////////////////////////////
 
@@ -271,6 +319,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"hahhahh");
+    DetailViewController *dvc = [[DetailViewController alloc] init];
+
+    [self.navigationController pushViewController:dvc animated:YES];
+    [self hideTabBar];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

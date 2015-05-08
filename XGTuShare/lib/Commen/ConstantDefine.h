@@ -43,6 +43,7 @@
 #define  STR_CATEGORY_FUJIN             @"附近"
 
 
-
+#define  kSendHideTabBarMessage         @"kSendHideTabBarMessage"
+#define  kSendShowTabBarMessage         @"kSendShowTabBarMessage"
 
 #endif

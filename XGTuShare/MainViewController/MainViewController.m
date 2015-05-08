@@ -26,10 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor greenColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTabBar) name:kSendShowTabBarMessage object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideTabBar) name:kSendHideTabBarMessage object:nil];
+
+    self.view.backgroundColor = [UIColor clearColor];
     
     [self _initViewControllers];
     [self _initTabbarView];
+//    self.tabBarController.hidesBottomBarWhenPushed = YES;
+//    self.tabBarView.hidden = YES;
+//    self.tabBar.hidden = YES;
 
 }
 
@@ -85,8 +91,9 @@
 //        tabButn.center = CGPointMake(ScreenWidth/4.0 * i , 0);
         [tabButn setImage:tabImg forState:UIControlStateNormal];
         [tabButn setImage:highImg forState:UIControlStateHighlighted];
-        tabButn.tag = i;
+        tabButn.tag = i+1;
         [tabButn addTarget:self action:@selector(tabBarSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [tabButn showsTouchWhenHighlighted];
         [_tabBarView addSubview:tabButn];
     }
     
@@ -96,7 +103,51 @@
 - (void)tabBarSelected:(UIButton *)button
 {
     _selectedButton = button;
-//    button.selected = YES;
-    [button showsTouchWhenHighlighted];
+    button.highlighted = !button.highlighted;
+    //    button.selected = YES;
+//    [self showViewController:[self.viewControllers objectAtIndex:button.tag-1] sender:nil];
 }
+
+- (void)hideTabBar {
+//    if (self.tabBarController.tabBar.hidden == YES) {
+//        return;
+//    }
+//    UIView *contentView;
+//    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+//    else
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+//    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
+    [UIView animateWithDuration:0.4 animations:^{
+        self.tabBar.hidden = YES;
+        self.tabBarView.hidden = YES;
+    }];
+
+}
+
+
+- (void)showTabBar
+{
+//    if (self.tabBarController.tabBar.hidden == NO)
+//    {
+//        return;
+//    }
+//    UIView *contentView;
+//    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]])
+//
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+//
+//    else
+//
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+//    contentView.frame = CGRectMake(contentView.bounds.origin.x, contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height - self.tabBarController.tabBar.frame.size.height);
+    [UIView animateWithDuration:0.4 animations:^{
+        self.tabBar.hidden = NO;
+        self.tabBarView.hidden = NO;
+    }];
+
+
+    
+}
+
 @end
