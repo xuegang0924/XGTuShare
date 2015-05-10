@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLSimpleCamera.h"
 
-@interface FindViewController : UIViewController
+@interface FindViewController : UIViewController<LLSimpleCameraDelegate>
 
 @end

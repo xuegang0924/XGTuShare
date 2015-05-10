@@ -166,6 +166,7 @@
             [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
             cell = contributionCell;
+            
         }
             break;
         case 3:
@@ -247,6 +248,9 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = nil;
+//    cell.contentView.alpha = 0.5f;
     if ([cell isKindOfClass:[KMMovieDetailsSimilarMoviesCell class]])
     {
         KMMovieDetailsSimilarMoviesCell* similarMovieCell = (KMMovieDetailsSimilarMoviesCell*)cell;

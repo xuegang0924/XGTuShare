@@ -43,7 +43,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 {
     self = [super init];
     if (self) {
-        _categoryMenuView = [[CategoryMenuView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, 100, ScreenHeight)];
+        _categoryMenuView = [[CategoryMenuView alloc] initWithFrame:CGRectMake(ScreenX,40, 100, ScreenHeight)];
         _topMenuView = [[TopMenuView alloc] initWithFrame:CGRectMake(ScreenWidth-100 -200,ScreenY+40, 200, 50)];
         _focusView = [[FocusView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth, 200)];
 //        _listView = [[ListView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY+200, ScreenWidth, 300)];
@@ -100,9 +100,12 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     [_showCatergoryViewButn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
     _showCatergoryViewButn.tag = 0;
     [_showCatergoryViewButn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:_showCatergoryViewButn];
     
+    _categoryMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
     [self.view addSubview:_categoryMenuView];
+    _categoryMenuView.hidden = YES;
 
 }
 
@@ -116,6 +119,8 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     [_showTopMenuViewButn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_showTopMenuViewButn];
     
+    
+    _topMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
     [self.view addSubview:_topMenuView];
 
 }
@@ -293,6 +298,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"SampleData" ofType:@"plist"];
     [self.dataArray addObjectsFromArray:[NSArray arrayWithContentsOfFile:filePath]];
 }
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

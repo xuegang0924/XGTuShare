@@ -10,7 +10,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KMMovieDetailsCell" rowHeight="120" id="CHa-g6-zDw" customClass="KMMovieDetailsCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CHa-g6-zDw" id="rKy-qo-bFH">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.64999999999999969" contentMode="center" tableViewCell="CHa-g6-zDw" id="rKy-qo-bFH">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -83,6 +83,7 @@
                         </state>
                     </button>
                 </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="fn1-Ld-nid" firstAttribute="leading" secondItem="rKy-qo-bFH" secondAttribute="leading" constant="63" id="0db-eL-084"/>
                     <constraint firstAttribute="trailing" secondItem="gwC-cG-uqt" secondAttribute="trailing" id="0kZ-92-BSH"/>

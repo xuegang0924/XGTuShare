@@ -74,6 +74,7 @@
 - (void) _initTabbarView
 {
     _tabBarView = [[UIView alloc] initWithFrame:CGRectMake(ScreenX, ScreenHeight-TABBAR_HEIGHT, ScreenWidth, TABBAR_HEIGHT)];
+//    _tabBarView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     [self.view addSubview:_tabBarView];
     
     NSArray *tabBarImgs = @[IMG_recommend_n,IMG_find_n,IMG_mine_n];
@@ -87,24 +88,29 @@
         UIImage *tabImg = [UIImage imageNamed:strTabBarImg];
         UIImage *highImg = [UIImage imageNamed:strHighlightImg];
         
-        UIButton *tabButn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenX+i*(ScreenWidth/3.0)+30, 0, TABBAR_HEIGHT+10, TABBAR_HEIGHT)];
+        UIButton *tabButn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenX+i*(ScreenWidth/3.0)+30, 0, TABBAR_HEIGHT+8, TABBAR_HEIGHT)];
 //        tabButn.center = CGPointMake(ScreenWidth/4.0 * i , 0);
         [tabButn setImage:tabImg forState:UIControlStateNormal];
-        [tabButn setImage:highImg forState:UIControlStateHighlighted];
-        tabButn.tag = i+1;
+//        [tabButn setImage:highImg forState:UIControlStateHighlighted];
+        [tabButn setImage:highImg forState:UIControlStateSelected];
+        tabButn.tag = i;
         [tabButn addTarget:self action:@selector(tabBarSelected:) forControlEvents:UIControlEventTouchUpInside];
         [tabButn showsTouchWhenHighlighted];
         [_tabBarView addSubview:tabButn];
     }
-    
+
+//    UITabBarItem *tabbaritem = [UITabBarItem alloc] initWithTabBarSystemItem:UITabBar tag:<#(NSInteger)#>
+//    NSArray *tabbaritems = nil;
+//    self.tabBarController.tabBar.items = tabbaritems;
     
 }
 
 - (void)tabBarSelected:(UIButton *)button
 {
+    self.selectedIndex = button.tag;
     _selectedButton = button;
     button.highlighted = !button.highlighted;
-    //    button.selected = YES;
+//        button.selected = YES;
 //    [self showViewController:[self.viewControllers objectAtIndex:button.tag-1] sender:nil];
 }
 

@@ -14,6 +14,10 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+//    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+    [self setOpaque:NO];
+    self.alpha = 0.2;
+    self.hidden = YES;
     [self initViews];
     [self hideMenu];
 }
@@ -25,15 +29,17 @@
     
     for ( int i = 0; i<names.count; i++)
     {
-        UIButton *cateBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        cateBtn.frame = CGRectMake(ScreenX+50*i, 0, 50, 50);
+        UIButton *cateBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        cateBtn.frame = CGRectMake(ScreenX+71*i, 0, 70, 50);
         
 //        [cateBtn setImage:[UIImage imageNamed: IMG_mine_p] forState:UIControlStateNormal];
 //        [cateBtn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
         cateBtn.tag = i;
         [cateBtn setTitle:names[i] forState:UIControlStateNormal];
-        cateBtn.titleLabel.textColor = [UIColor blackColor];
-        cateBtn.backgroundColor = [UIColor purpleColor];
+//        cateBtn.titleLabel.textColor = [UIColor redColor];
+        [cateBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        cateBtn.backgroundColor = [UIColor clearColor];
+        
         [cateBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:cateBtn];
     }

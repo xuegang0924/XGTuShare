@@ -21,6 +21,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+    self.opaque = YES;
     [self initViews];
     [self hideMenu];
 }
@@ -33,15 +34,17 @@
     for ( int i = 0; i<names.count; i++)
     {
         UIButton *cateBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        cateBtn.frame = CGRectMake(ScreenX, BUTTON_HEIGHT * i, self.frame.size.width, BUTTON_HEIGHT);
+        cateBtn.frame = CGRectMake(ScreenX, (BUTTON_HEIGHT+1) * i, self.frame.size.width, BUTTON_HEIGHT);
         
 //        [cateBtn setImage:[UIImage imageNamed: IMG_mine_p] forState:UIControlStateNormal];
 //        [cateBtn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
         cateBtn.tag = i;
 //        cateBtn.titleLabel.text = @"sss";//names[i];
         [cateBtn setTitle:names[i] forState:UIControlStateNormal];
-        cateBtn.titleLabel.textColor = [UIColor blackColor];
-        cateBtn.backgroundColor = [UIColor purpleColor];
+        cateBtn.titleLabel.textColor = [UIColor whiteColor];
+//        cateBtn.backgroundColor = [UIColor darkGrayColor];
+//        cateBtn.alpha = 1;
+//        cateBtn.opaque = YES;
         [cateBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:cateBtn];
     }
@@ -54,13 +57,16 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.frame = CGRectMake(self.frame.origin.x - self.frame.size.width, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 
-    } completion:^(BOOL finished){}];
+    } completion:^(BOOL finished){
+        self.hidden = YES;
+    }];
 }
 
 - (void)showMenu
 {
-    
+    self.hidden = NO;
     [UIView animateWithDuration:0.5 animations:^{
+        
         self.frame = CGRectMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
         
     } completion:^(BOOL finished){}];
