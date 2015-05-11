@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindResultViewController : UIViewController
+@interface FindResultViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) IBOutlet UIButton *backBtn;
 
 

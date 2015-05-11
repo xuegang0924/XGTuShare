@@ -247,11 +247,11 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
     self.tableView1.headerPullToRefreshText = @"下拉可以刷新了";
     self.tableView1.headerReleaseToRefreshText = @"松开马上刷新了";
-    self.tableView1.headerRefreshingText = @"MJ哥正在帮你刷新中,不客气";
+    self.tableView1.headerRefreshingText = @"正在帮你刷新中,不客气";
     
     self.tableView1.footerPullToRefreshText = @"上拉可以加载更多数据了";
     self.tableView1.footerReleaseToRefreshText = @"松开马上加载更多数据了";
-    self.tableView1.footerRefreshingText = @"MJ哥正在帮你加载中,不客气";
+    self.tableView1.footerRefreshingText = @"正在帮你加载中,不客气";
 }
 
 #pragma mark 开始进入刷新状态

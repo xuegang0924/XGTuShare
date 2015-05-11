@@ -367,7 +367,6 @@
 		1DF003451AFFAF4300D45BDD /* FindResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF003431AFFAF4300D45BDD /* FindResultViewController.m */; };
 		1DF003461AFFAF4300D45BDD /* FindResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF003441AFFAF4300D45BDD /* FindResultViewController.xib */; };
 		1DF0034C1AFFB73900D45BDD /* FindResultTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0034B1AFFB73900D45BDD /* FindResultTableView.m */; };
-		1DF0034F1AFFB7C300D45BDD /* FindResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0034E1AFFB7C300D45BDD /* FindResultView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -819,8 +818,6 @@
 		1DF003441AFFAF4300D45BDD /* FindResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindResultViewController.xib; sourceTree = "<group>"; };
 		1DF0034A1AFFB73900D45BDD /* FindResultTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindResultTableView.h; sourceTree = "<group>"; };
 		1DF0034B1AFFB73900D45BDD /* FindResultTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindResultTableView.m; sourceTree = "<group>"; };
-		1DF0034D1AFFB7C300D45BDD /* FindResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindResultView.h; sourceTree = "<group>"; };
-		1DF0034E1AFFB7C300D45BDD /* FindResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindResultView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1673,8 +1670,6 @@
 				1DF003421AFFAF4300D45BDD /* FindResultViewController.h */,
 				1DF003431AFFAF4300D45BDD /* FindResultViewController.m */,
 				1DF003441AFFAF4300D45BDD /* FindResultViewController.xib */,
-				1DF0034D1AFFB7C300D45BDD /* FindResultView.h */,
-				1DF0034E1AFFB7C300D45BDD /* FindResultView.m */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -2273,7 +2268,6 @@
 				1D9393091AF8FCB40081FADA /* CustomCatagory.m in Sources */,
 				1D9392F61AF8F9CB0081FADA /* DDMenuController.m in Sources */,
 				1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */,
-				1DF0034F1AFFB7C300D45BDD /* FindResultView.m in Sources */,
 				1D93930A1AF8FCB40081FADA /* UIUtils.m in Sources */,
 				1D9392A21AF8F75C0081FADA /* main.m in Sources */,
 				1D5E07A71AFC98DE006907C0 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2438,6 +2432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/XGTuShare/PrefixHeader.pch";
@@ -2459,6 +2454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/XGTuShare/PrefixHeader.pch";
