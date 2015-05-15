@@ -46,4 +46,18 @@
 #define  kSendHideTabBarMessage         @"kSendHideTabBarMessage"
 #define  kSendShowTabBarMessage         @"kSendShowTabBarMessage"
 
+
+//临时定义用户头像
+#define IMG_USERHEAD                    @"pic1"
+
+#define IMG_LIKEOTHERS                  @"comment_like_p"
+#define IMG_LIKEME                      @"player_upBtn_high_p"
+#define IMG_COLECT                      @"pla_save_icon_p"
+#define IMG_PULISHED                    @"pla_share_p"
+#define IMG_SETTING                     @"pla_setting_icon_p"
+#define IMG_MOREINFO                    @"toast_saving"
+
+#define IMG_ARROW_RIGHT                 @"arrow_right"
+
+
 #endif

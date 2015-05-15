@@ -367,6 +367,8 @@
 		1DF003451AFFAF4300D45BDD /* FindResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF003431AFFAF4300D45BDD /* FindResultViewController.m */; };
 		1DF003461AFFAF4300D45BDD /* FindResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF003441AFFAF4300D45BDD /* FindResultViewController.xib */; };
 		1DF0034C1AFFB73900D45BDD /* FindResultTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0034B1AFFB73900D45BDD /* FindResultTableView.m */; };
+		1DF003521B0643F300D45BDD /* MineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF003511B0643F300D45BDD /* MineSubView.m */; };
+		1DF0035A1B0645D100D45BDD /* UserCountSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF003591B0645D100D45BDD /* UserCountSubView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -818,6 +820,10 @@
 		1DF003441AFFAF4300D45BDD /* FindResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindResultViewController.xib; sourceTree = "<group>"; };
 		1DF0034A1AFFB73900D45BDD /* FindResultTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindResultTableView.h; sourceTree = "<group>"; };
 		1DF0034B1AFFB73900D45BDD /* FindResultTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindResultTableView.m; sourceTree = "<group>"; };
+		1DF003501B0643F300D45BDD /* MineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSubView.h; sourceTree = "<group>"; };
+		1DF003511B0643F300D45BDD /* MineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSubView.m; sourceTree = "<group>"; };
+		1DF003581B0645D100D45BDD /* UserCountSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCountSubView.h; sourceTree = "<group>"; };
+		1DF003591B0645D100D45BDD /* UserCountSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCountSubView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1691,9 +1697,12 @@
 		1D93930E1AF8FD320081FADA /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				1DF003571B0645D100D45BDD /* UserCountSubView */,
 				1D93931F1AF8FD970081FADA /* MineViewController.h */,
 				1D9393201AF8FD970081FADA /* MineViewController.m */,
 				1D9393211AF8FD970081FADA /* MineViewController.xib */,
+				1DF003501B0643F300D45BDD /* MineSubView.h */,
+				1DF003511B0643F300D45BDD /* MineSubView.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1849,6 +1858,15 @@
 				1DF002F11AFFA67500D45BDD /* user_head_saving@2x.png */,
 			);
 			path = CopyImages;
+			sourceTree = "<group>";
+		};
+		1DF003571B0645D100D45BDD /* UserCountSubView */ = {
+			isa = PBXGroup;
+			children = (
+				1DF003581B0645D100D45BDD /* UserCountSubView.h */,
+				1DF003591B0645D100D45BDD /* UserCountSubView.m */,
+			);
+			path = UserCountSubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2260,6 +2278,7 @@
 				1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */,
 				1D93930B1AF8FCB40081FADA /* UIViewExt.m in Sources */,
 				1D5E075B1AFC97EA006907C0 /* KMComposeCommentCell.m in Sources */,
+				1DF003521B0643F300D45BDD /* MineSubView.m in Sources */,
 				1D2917051AFBBC2C0087CD2E /* MJRefreshBaseView.m in Sources */,
 				1D5E07A21AFC98DE006907C0 /* NSData+ImageContentType.m in Sources */,
 				1D5E07AD1AFC98DE006907C0 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -2304,6 +2323,7 @@
 				1D2916F21AFA78AB0087CD2E /* TopMenuView.m in Sources */,
 				1D3CCDF31AFB5E93008702F0 /* ListTableViewController.m in Sources */,
 				1D5E07631AFC97EA006907C0 /* KMMovieDetailsPopularityCell.m in Sources */,
+				1DF0035A1B0645D100D45BDD /* UserCountSubView.m in Sources */,
 				1D5E07C31AFC99EC006907C0 /* KMGillSansLabel.m in Sources */,
 				1D5E07A41AFC98DE006907C0 /* SDWebImageCompat.m in Sources */,
 				1D5E07A31AFC98DE006907C0 /* SDImageCache.m in Sources */,

@@ -7,8 +7,11 @@
 //
 
 #import "MineViewController.h"
+#import "MineSubView.h"
 
 @interface MineViewController ()
+@property (nonatomic,strong)MineSubView *mineSubView;
+
 
 @end
 
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = YES;
+    _mineSubView = [[MineSubView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
+    [self.view addSubview:_mineSubView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +31,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
