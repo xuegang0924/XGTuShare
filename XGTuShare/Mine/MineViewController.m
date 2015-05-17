@@ -8,10 +8,14 @@
 
 #import "MineViewController.h"
 #import "MineSubView.h"
+#import "UIImageView+LBBlurredImage.h"
+
 
 @interface MineViewController ()
 @property (nonatomic,strong)MineSubView *mineSubView;
 
+@property (nonatomic, strong) UIImageView   *backgroundImageView;
+@property (nonatomic, strong) UIView   *backgroundView;
 
 @end
 
@@ -21,9 +25,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
+    [self.view addSubview:self.backgroundImageView];
+    [self.view bringSubviewToFront:self.backgroundImageView];
+    
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    [self.view addSubview:self.backgroundView];
+    
     self.navigationController.navigationBarHidden = YES;
     _mineSubView = [[MineSubView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
     [self.view addSubview:_mineSubView];
+    
+    
+
+    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:kSendHideTabBarMessage object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {

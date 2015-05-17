@@ -17,12 +17,13 @@
 #import "KMComposeCommentCell.h"
 #import "UIImageView+WebCache.h"
 
-
 @interface DetailViewController ()
 
 @property (nonatomic, strong) NSMutableArray* similarMoviesDataSource;
 //@property (nonatomic, strong) KMNetworkLoadingViewController* networkLoadingViewController;
 @property (assign) CGPoint scrollViewDragPoint;
+
+
 
 
 @end
@@ -36,6 +37,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+
+        
         self.articleDetails = [[ArticleModle alloc] init];
         self.similarMoviesDataSource = [[NSMutableArray alloc] initWithCapacity:9];
         for (int i = 0; i<9; i++) {
@@ -50,6 +53,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+
+    
     [self setupDetailsPageView];
     [self setupNavigationbarButtons];
 }
@@ -300,6 +306,8 @@
 {
     KMSimilarMoviesCollectionViewCell* cell = (KMSimilarMoviesCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"KMSimilarMoviesCollectionViewCell" forIndexPath:indexPath];
 //    [cell.cellImageView setImageURL:[NSURL URLWithString:[[self.similarMoviesDataSource objectAtIndex:indexPath.row] movieThumbnailPosterImageUrl]]];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = nil;
     cell.cellImageView.image = [UIImage imageNamed:@"kevin_avatar"];
     
     return cell;

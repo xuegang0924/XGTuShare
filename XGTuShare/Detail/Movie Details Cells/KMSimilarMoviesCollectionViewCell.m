@@ -16,6 +16,8 @@
 + (KMSimilarMoviesCollectionViewCell*) similarMoviesCollectionViewCell
 {
     KMSimilarMoviesCollectionViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMSimilarMoviesCollectionViewCell" owner:self options:nil] objectAtIndex:0];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = nil;
     return cell;
 }
 

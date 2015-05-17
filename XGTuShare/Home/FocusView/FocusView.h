@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FocusView : UIView
+@interface FocusView : UIView <UIScrollViewDelegate>
 
 @property (nonatomic,strong)UIScrollView *scrolView;
 

@@ -58,6 +58,7 @@
     _imageScalingFactor = kDefaultImageScalingFactor;
     _headerImageAlpha = kDefaultImageAlpha;
     _backgroundViewColor = [UIColor clearColor];
+    
     self.autoresizesSubviews = YES;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
@@ -153,6 +154,7 @@
 {
     self.backgroundColor = self.backgroundViewColor;
     self.tableView.backgroundColor = self.backgroundViewColor;
+    
 }
 
 - (void)setupImageViewGradient

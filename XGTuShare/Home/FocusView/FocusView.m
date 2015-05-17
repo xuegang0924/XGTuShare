@@ -33,6 +33,8 @@
         _originY = frame.origin.y;
         _width = frame.size.width;
         _height = frame.size.height;
+        
+        
     }
     return self;
 }
@@ -40,6 +42,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+    self.scrolView.delegate = self;
     [self _initViews];
     
     
@@ -53,7 +56,7 @@
     CGSize contSize = {SCROLVIEW_WIDTH * SCROLVIEW_PAGE_NUM, 0};
     _scrolView.contentSize = contSize;
     _scrolView.pagingEnabled = YES;
-    _scrolView.backgroundColor = [UIColor redColor];
+    _scrolView.backgroundColor = [UIColor darkGrayColor];
     _scrolView.bounces = YES;
     _scrolView.bouncesZoom = YES;
     _scrolView.showsVerticalScrollIndicator = YES;
@@ -78,6 +81,14 @@
         imgView.frame = CGRectMake(ScreenX+pageNum*SCROLVIEW_WIDTH, ScreenY, SCROLVIEW_WIDTH, SCROLVIEW_HEIGHT);
         [_scrolView addSubview:imgView];
     }
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    // Log Parallax Progress
+    NSLog(@"Progress scrollViewDidScroll");
 }
 
 @end

@@ -8,7 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum
+{
+    eTopMenuButonTouchEventHot = 0,
+    eTopMenuButonTouchEventNew ,
+    eTopMenuButonTouchEventNearby,
+    
+}ETopMenuButonTouchEventType;
+
+@protocol  TopMenuViewDelegate<NSObject>
+
+-(void)onTopMenuButonTouched:(UIButton *)button withTouchEventType:(ETopMenuButonTouchEventType)touchEventType;
+
+@end
+
 @interface TopMenuView : UIView
+@property(nonatomic,assign)id<TopMenuViewDelegate> delegate;
 
 - (void)showMenu;
 - (void)hideMenu;

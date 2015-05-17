@@ -8,8 +8,31 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryMenuView : UIView
+typedef enum
+{
+    eCategoryMenuButonTouchEventHome = 0,
+    eCategoryMenuButonTouchEventTraval,
+    eCategoryMenuButonTouchEventFood,
+    eCategoryMenuButonTouchEventGame,
+    eCategoryMenuButonTouchEventShop,
+    eCategoryMenuButonTouchEventSene,
+    eCategoryMenuButonTouchEventDigtle,
+    eCategoryMenuButonTouchEventConstruct,
+    eCategoryMenuButonTouchEventClose,
+    eCategoryMenuButonTouchEventTrafic,
+    eCategoryMenuButonTouchEventOther,
+    
+}ECategoryMenuButonTouchEventType;
 
+@protocol  CategoryMenuViewDelegate<NSObject>
+
+-(void)onCategoryMenuButonTouched:(UIButton *)button withTouchEventType:(ECategoryMenuButonTouchEventType)touchEventType;
+
+@end
+
+
+@interface CategoryMenuView : UIView
+@property(nonatomic,assign)id<CategoryMenuViewDelegate> delegate;
 
 - (void)showMenu;
 - (void)hideMenu;

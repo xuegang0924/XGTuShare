@@ -101,7 +101,7 @@
     self.companyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.companyLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.companyLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
-    self.companyLabel.textColor = [UIColor blackColor];
+    self.companyLabel.textColor = [UIColor greenColor];
     self.companyLabel.numberOfLines = 1;
     [self.contentView addSubview:self.companyLabel];
     
@@ -111,7 +111,7 @@
     self.bioLabel.numberOfLines = 0; // Must be set for multi-line label to work
     self.bioLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.bioLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15];
-    self.bioLabel.textColor = [UIColor darkGrayColor];
+    self.bioLabel.textColor = [UIColor colorWithWhite:0.8 alpha:1];
     [self.contentView addSubview:self.bioLabel];
     
     // Constrain

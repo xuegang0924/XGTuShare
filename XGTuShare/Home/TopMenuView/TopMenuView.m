@@ -16,7 +16,7 @@
     [super drawRect:rect];
 //    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     [self setOpaque:NO];
-    self.alpha = 0.2;
+//    self.alpha = 0.4;
     self.hidden = YES;
     [self initViews];
     [self hideMenu];
@@ -74,7 +74,11 @@
 
 - (void)buttonPressed:(UIButton *)button
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onTopMenuButonTouched:withTouchEventType:)])
+    {
+        [self.delegate onTopMenuButonTouched:button withTouchEventType:(ETopMenuButonTouchEventType)button.tag];
+        
+    }
 }
 
 

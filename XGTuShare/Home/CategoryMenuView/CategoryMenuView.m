@@ -22,6 +22,7 @@
 {
     [super drawRect:rect];
     self.opaque = YES;
+//    self.alpha = 0.6;
     [self initViews];
     [self hideMenu];
 }
@@ -41,7 +42,8 @@
         cateBtn.tag = i;
 //        cateBtn.titleLabel.text = @"sss";//names[i];
         [cateBtn setTitle:names[i] forState:UIControlStateNormal];
-        cateBtn.titleLabel.textColor = [UIColor whiteColor];
+//        cateBtn.titleLabel.textColor = [UIColor whiteColor];
+        [cateBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
 //        cateBtn.backgroundColor = [UIColor darkGrayColor];
 //        cateBtn.alpha = 1;
 //        cateBtn.opaque = YES;
@@ -75,7 +77,11 @@
 
 - (void)buttonPressed:(UIButton *)button
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onCategoryMenuButonTouched:withTouchEventType:)])
+    {
+        [self.delegate onCategoryMenuButonTouched:button withTouchEventType:(ECategoryMenuButonTouchEventType)button.tag];
+        
+    }
 }
 
 @end

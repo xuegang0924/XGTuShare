@@ -10,14 +10,17 @@
 #import "CategoryMenuView.h"
 #import "TopMenuView.h"
 #import "FocusView.h"
-#import "ListView.h"
+//#import "ListView.h"
 #import "ListTableViewCell.h"
 #import "MJRefresh.h"
-
 #import "DetailViewController.h"
+#import "UIScrollView+VGParallaxHeader.h"
+#import "UIImageView+LBBlurredImage.h"
+
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
-NSString *const MJTableViewCellIdentifier = @"Cell";
+
+NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 
 @interface HomeViewController ()
@@ -27,7 +30,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 @property(nonatomic,strong)CategoryMenuView *categoryMenuView;
 @property(nonatomic,strong)TopMenuView *topMenuView;
 @property(nonatomic,strong)FocusView *focusView;
-@property(nonatomic,strong)ListView *listView;
+//@property(nonatomic,strong)ListView *listView;
 @property(nonatomic,assign)BOOL iscategoryMenuViewShowed;
 @property(nonatomic,assign)BOOL isTopMenuShowed;
 
@@ -35,18 +38,21 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
+@property (nonatomic, strong) UIImageView   *backgroundImageView;
+@property (nonatomic, strong) UIView   *backgroundView;
+
 @end
 
 @implementation HomeViewController
+
+
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        _categoryMenuView = [[CategoryMenuView alloc] initWithFrame:CGRectMake(ScreenX,40, 100, ScreenHeight)];
-        _topMenuView = [[TopMenuView alloc] initWithFrame:CGRectMake(ScreenWidth-100 -200,ScreenY+40, 200, 50)];
-        _focusView = [[FocusView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth, 200)];
-//        _listView = [[ListView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY+200, ScreenWidth, 300)];
+        
+        
         [self setupDataArray];
 
     }
@@ -55,35 +61,54 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBarController.hidesBottomBarWhenPushed = YES;
+    // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBarHidden = YES;
+//    self.tabBarController.hidesBottomBarWhenPushed = YES;
+    
 
     
-    self.tableView1.frame = CGRectMake(ScreenX,20, ScreenWidth, ScreenHeight-_focusView.frame.size.height);
-    // 1.注册cell
-    [self.tableView1 registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
-    self.tableView1.delegate = self;
-    self.tableView1.dataSource = self;
-    self.tableView1.alpha = 0.5f;
-    self.tableView1.backgroundColor = [UIColor clearColor];
-    self.tableView1.hidden = NO;
+    //加入半透明浮层
+    self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.backgroundView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    [self.view addSubview:self.backgroundView];
+    [self.view sendSubviewToBack:self.backgroundView];
     
-    // 2.集成刷新控件
+    //加入模糊图片
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.backgroundImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
+    [self.view addSubview:self.backgroundImageView];
+    //    [self.view bringSubviewToFront:self.backgroundImageView];
+    [self.view sendSubviewToBack:self.backgroundImageView];
+    
+
+    //设置视差效果tableView
+    //焦点图视图
+    _focusView = [[FocusView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth, 200)];
+    [self.tableView setParallaxHeaderView:_focusView
+                                     mode:VGParallaxHeaderModeFill
+                                   height:200];
+    
+    
+    self.tableView.frame = CGRectMake(0,0, ScreenWidth, ScreenHeight);
+    // 注册cell
+    [self.tableView registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+//    self.tableView.alpha = 0.5f;
+    self.tableView.backgroundColor = [UIColor clearColor];
+//    self.tableView.hidden = NO;
+    
+    // 集成刷新控件
     [self setupRefresh];
     
-    
-    // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor blackColor];
-    self.navigationController.navigationBarHidden = YES;
-    
-    [self.view addSubview:_focusView];
+    // 加入类别和分类菜单
     [self _initTopView];
     [self _initShowCatergoryView];
     
-    //解决scrollview偏移
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars = NO;
-    self.modalPresentationCapturesStatusBarAppearance = NO;
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,7 +128,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     
     [self.view addSubview:_showCatergoryViewButn];
     
-    _categoryMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
+    //右侧类别菜单
+    _categoryMenuView = [[CategoryMenuView alloc] initWithFrame:CGRectMake(ScreenX,40, 100, ScreenHeight)];
+    _categoryMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+    _categoryMenuView.delegate = self;
     [self.view addSubview:_categoryMenuView];
     _categoryMenuView.hidden = YES;
 
@@ -119,99 +147,102 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     [_showTopMenuViewButn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_showTopMenuViewButn];
     
-    
-    _topMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
+    //顶部分类菜单
+    _topMenuView = [[TopMenuView alloc] initWithFrame:CGRectMake(ScreenWidth-100 -200,ScreenY+40, 200, 50)];
+    _topMenuView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+    _topMenuView.delegate = self;
     [self.view addSubview:_topMenuView];
 
 }
 
 - (void)buttonPressed:(UIButton *)button
 {
-    if (button.tag == 0) {
-        
+    if (button.tag == 0)
+    {
         _iscategoryMenuViewShowed = !_iscategoryMenuViewShowed;
         
-        if (_iscategoryMenuViewShowed) {
-            
-            [_categoryMenuView showMenu];
-            [UIView animateWithDuration:0.5 animations:^{
-                _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x + _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
-            }];
+        if (_iscategoryMenuViewShowed)
+        {
+            [self showCategoryMenu];
         }
         else
         {
-            [_categoryMenuView hideMenu];
-            [UIView animateWithDuration:0.5 animations:^{
-                _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x - _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
-            }];
+            [self hideCategoryMenu];
         }
     }
     else if (button.tag == 1)
     {
         _isTopMenuShowed = !_isTopMenuShowed;
         
-        if (_isTopMenuShowed) {
-            
-            [_topMenuView showMenu];
-            [UIView animateWithDuration:0.5 animations:^{
-//                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x + _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);
-            }];
+        if (_isTopMenuShowed)
+        {
+            [self showTopMenu];
         }
         else
         {
-            [_topMenuView hideMenu];
-            [UIView animateWithDuration:0.5 animations:^{
-//                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x - _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);
-            }];
+            [self hideTopMenu];
         }
     }
     
 
 }
 
+- (void)showCategoryMenu
+{
+    [_categoryMenuView showMenu];
+    [UIView animateWithDuration:0.5 animations:^{
+        _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x + _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
+    }];
+}
 
+- (void)hideCategoryMenu
+{
+    [_categoryMenuView hideMenu];
+    [UIView animateWithDuration:0.5 animations:^{
+        _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x - _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
+    }];
+}
 
-- (void)hideTabBar {
-//    if (self.tabBarController.tabBar.hidden == YES) {
-//        return;
-//    }
-//    UIView *contentView;
-//    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
-//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
-//    else
-//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
-//    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
-//    self.tabBarController.tabBar.hidden = YES;
+- (void)showTopMenu
+{
+    [_topMenuView showMenu];
+    [UIView animateWithDuration:0.5 animations:^{
+        //                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x + _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);
+    }];
+}
+
+- (void)hideTopMenu
+{
+    [_topMenuView hideMenu];
+    [UIView animateWithDuration:0.5 animations:^{
+        //                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x - _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);
+    }];
+}
+
+- (void)hideTabBar
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:kSendHideTabBarMessage object:nil];
-    
 }
 
 
 - (void)showTabBar
 
 {
-//    if (self.tabBarController.tabBar.hidden == NO)
-//    {
-//        return;
-//    }
-//    UIView *contentView;
-//    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]])
-//        
-//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
-//    
-//    else
-//        
-//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
-//    contentView.frame = CGRectMake(contentView.bounds.origin.x, contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height - self.tabBarController.tabBar.frame.size.height);
-//    self.tabBarController.tabBar.hidden = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:kSendShowTabBarMessage object:nil];
-
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self showTabBar];
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.tableView shouldPositionParallaxHeader];
+    
+    // Log Parallax Progress
+    //NSLog(@"Progress: %f", scrollView.parallaxHeader.progress);
 }
 
 /////////////////////////////////////////////
@@ -237,21 +268,21 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 - (void)setupRefresh
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.tableView1 addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
 #warning 自动刷新(一进入程序就下拉刷新)
-    [self.tableView1 headerBeginRefreshing];
+    [self.tableView headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView1 addFooterWithTarget:self action:@selector(footerRereshing)];
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     
     // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
-    self.tableView1.headerPullToRefreshText = @"下拉可以刷新了";
-    self.tableView1.headerReleaseToRefreshText = @"松开马上刷新了";
-    self.tableView1.headerRefreshingText = @"正在帮你刷新中,不客气";
+    self.tableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.tableView.headerRefreshingText = @"正在帮你刷新中,不客气";
     
-    self.tableView1.footerPullToRefreshText = @"上拉可以加载更多数据了";
-    self.tableView1.footerReleaseToRefreshText = @"松开马上加载更多数据了";
-    self.tableView1.footerRefreshingText = @"正在帮你加载中,不客气";
+    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.tableView.footerRefreshingText = @"正在帮你加载中,不客气";
 }
 
 #pragma mark 开始进入刷新状态
@@ -265,10 +296,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
-        [self.tableView1 reloadData];
+        [self.tableView reloadData];
         
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView1 headerEndRefreshing];
+        [self.tableView headerEndRefreshing];
     });
 }
 
@@ -282,10 +313,10 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
-        [self.tableView1 reloadData];
+        [self.tableView reloadData];
         
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView1 footerEndRefreshing];
+        [self.tableView footerEndRefreshing];
     });
 }
 
@@ -310,7 +341,8 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
     ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
-    
+    cell.backgroundView = nil;
+    cell.backgroundColor = [UIColor clearColor];
     // Load data
     NSDictionary *dataDict = self.dataArray[indexPath.row];
     // Sample image
@@ -354,5 +386,25 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     return cellSize.height;
 }
 
+
+#pragma mark -
+#pragma mark CategoryMenuViewDelegate
+-(void)onCategoryMenuButonTouched:(UIButton *)button withTouchEventType:(ECategoryMenuButonTouchEventType)touchEventType
+{
+    //TODO:获取不同的类别数据 进行刷新
+    [self.tableView reloadData];
+    [self hideCategoryMenu];
+    _iscategoryMenuViewShowed = NO;
+}
+
+#pragma mark -
+#pragma mark TopMenuViewDelegate
+-(void)onTopMenuButonTouched:(UIButton *)button withTouchEventType:(ETopMenuButonTouchEventType)touchEventType
+{
+    //TODO:获取不同的分类数据 进行刷新
+    [self.tableView reloadData];
+    [self hideTopMenu];
+    _isTopMenuShowed = NO;
+}
 
 @end
