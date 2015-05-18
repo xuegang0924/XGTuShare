@@ -59,5 +59,7 @@
 
 #define IMG_ARROW_RIGHT                 @"arrow_right"
 
+#define IMG_SEPERATE_H                  @"soundtrack_v"
+#define IMG_SEPERATE_V                  @"soundtrack_b"
 
 #endif

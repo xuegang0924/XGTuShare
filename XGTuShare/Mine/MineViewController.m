@@ -25,8 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
+    
+    self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
     [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
     [self.view addSubview:self.backgroundImageView];
     [self.view bringSubviewToFront:self.backgroundImageView];

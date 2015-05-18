@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D21EC891B09E162007C10C4 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21EC871B09E162007C10C4 /* DetailTableViewController.m */; };
+		1D21EC8A1B09E162007C10C4 /* DetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */; };
+		1D21ECA71B0A10D7007C10C4 /* soundtrack_v~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */; };
+		1D21ECA81B0A10D7007C10C4 /* soundtrack_v~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D21ECA61B0A10D7007C10C4 /* soundtrack_v~iphone@2x.png */; };
 		1D2916D01AF91FC50087CD2E /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916CF1AF91FC50087CD2E /* BaseNavigationViewController.m */; };
 		1D2916DF1AFA73600087CD2E /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2916DD1AFA73600087CD2E /* ListTableViewCell.m */; };
 		1D2916E01AFA73600087CD2E /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2916DE1AFA73600087CD2E /* ListTableViewCell.xib */; };
@@ -384,6 +388,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D21EC861B09E162007C10C4 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		1D21EC871B09E162007C10C4 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewController.xib; sourceTree = "<group>"; };
+		1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundtrack_v~iphone.png"; sourceTree = "<group>"; };
+		1D21ECA61B0A10D7007C10C4 /* soundtrack_v~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundtrack_v~iphone@2x.png"; sourceTree = "<group>"; };
 		1D2916CE1AF91FC50087CD2E /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		1D2916CF1AF91FC50087CD2E /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
 		1D2916DC1AFA73600087CD2E /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
@@ -1735,6 +1744,9 @@
 				1D93932A1AF912150081FADA /* DetailViewController.h */,
 				1D93932B1AF912150081FADA /* DetailViewController.m */,
 				1D93932C1AF912150081FADA /* DetailViewController.xib */,
+				1D21EC861B09E162007C10C4 /* DetailTableViewController.h */,
+				1D21EC871B09E162007C10C4 /* DetailTableViewController.m */,
+				1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1831,6 +1843,8 @@
 		1DF002A71AFFA67500D45BDD /* CopyImages */ = {
 			isa = PBXGroup;
 			children = (
+				1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */,
+				1D21ECA61B0A10D7007C10C4 /* soundtrack_v~iphone@2x.png */,
 				1DF002A81AFFA67500D45BDD /* comment_have_down@2x.png */,
 				1DF002A91AFFA67500D45BDD /* comment_have_down@3x.png */,
 				1DF002AA1AFFA67500D45BDD /* comment_have_up@2x.png */,
@@ -2036,6 +2050,7 @@
 				1DF003181AFFA67500D45BDD /* pla_save_icon_p~iphone@3x.png in Resources */,
 				1D295E461AFA050C00A147E2 /* retry.png in Resources */,
 				1D5E081E1AFCAF18006907C0 /* movepic2.png in Resources */,
+				1D21EC8A1B09E162007C10C4 /* DetailTableViewController.xib in Resources */,
 				1D295DE71AFA050C00A147E2 /* player_downBtn_high_p.png in Resources */,
 				1D5E08061AFCAD32006907C0 /* back_icon@2x.png in Resources */,
 				1D295E4C1AFA050C00A147E2 /* tabbar_bg_p.png in Resources */,
@@ -2123,6 +2138,7 @@
 				1DF003341AFFA67500D45BDD /* play_reply_send_success@3x.png in Resources */,
 				1D295E191AFA050C00A147E2 /* PPQ_ShareIcon_WeixinPengyouquanSelect@2x.png in Resources */,
 				1DF0033A1AFFA67500D45BDD /* player_close_f_p@3x.png in Resources */,
+				1D21ECA71B0A10D7007C10C4 /* soundtrack_v~iphone.png in Resources */,
 				1D295E1F1AFA050C00A147E2 /* sns_login_kaixin@2x.png in Resources */,
 				1D295DFB1AFA050C00A147E2 /* unknow_user_uploader_p.png in Resources */,
 				1D295E2E1AFA050C00A147E2 /* channel_p_p@3x.png in Resources */,
@@ -2159,6 +2175,7 @@
 				1D5E08161AFCAD32006907C0 /* Contents.json in Resources */,
 				1DF003371AFFA67500D45BDD /* play_section_up.png in Resources */,
 				1D295E0F1AFA050C00A147E2 /* PPQ_ShareIcon_SinaSelect@2x.png in Resources */,
+				1D21ECA81B0A10D7007C10C4 /* soundtrack_v~iphone@2x.png in Resources */,
 				1D295E4D1AFA050C00A147E2 /* tooffline.png in Resources */,
 				1D295E4F1AFA050C00A147E2 /* top_bk_p1.png in Resources */,
 				1D29173E1AFBCEC70087CD2E /* Contents.json in Resources */,
@@ -2340,6 +2357,7 @@
 				1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */,
 				1D93930A1AF8FCB40081FADA /* UIUtils.m in Sources */,
 				1D9392A21AF8F75C0081FADA /* main.m in Sources */,
+				1D21EC891B09E162007C10C4 /* DetailTableViewController.m in Sources */,
 				1D5E07A71AFC98DE006907C0 /* SDWebImageDownloaderOperation.m in Sources */,
 				1D2917091AFBBC2C0087CD2E /* UIScrollView+MJExtension.m in Sources */,
 				1D9393221AF8FD970081FADA /* MineViewController.m in Sources */,

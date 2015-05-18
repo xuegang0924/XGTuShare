@@ -16,7 +16,7 @@
 #import "DetailViewController.h"
 #import "UIScrollView+VGParallaxHeader.h"
 #import "UIImageView+LBBlurredImage.h"
-
+#import "DetailTableViewController.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
@@ -102,7 +102,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 //    self.tableView.hidden = NO;
     
     // 集成刷新控件
-    [self setupRefresh];
+//    [self setupRefresh];
     
     // 加入类别和分类菜单
     [self _initTopView];

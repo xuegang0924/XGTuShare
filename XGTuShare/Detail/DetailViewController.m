@@ -255,8 +255,8 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.backgroundView = nil;
+//    cell.backgroundColor = [UIColor clearColor];
+//    cell.backgroundView = nil;
 //    cell.contentView.alpha = 0.5f;
     if ([cell isKindOfClass:[KMMovieDetailsSimilarMoviesCell class]])
     {
@@ -306,8 +306,8 @@
 {
     KMSimilarMoviesCollectionViewCell* cell = (KMSimilarMoviesCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"KMSimilarMoviesCollectionViewCell" forIndexPath:indexPath];
 //    [cell.cellImageView setImageURL:[NSURL URLWithString:[[self.similarMoviesDataSource objectAtIndex:indexPath.row] movieThumbnailPosterImageUrl]]];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.backgroundView = nil;
+//    cell.backgroundColor = [UIColor clearColor];
+//    cell.backgroundView = nil;
     cell.cellImageView.image = [UIImage imageNamed:@"kevin_avatar"];
     
     return cell;

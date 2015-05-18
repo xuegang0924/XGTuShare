@@ -10,6 +10,8 @@
 #import "FindResultTableView.h"
 #import "ListTableViewCell.h"
 #import "DetailViewController.h"
+#import "UIImageView+LBBlurredImage.h"
+
 
 NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 
@@ -21,6 +23,10 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 
 @property (nonatomic,strong) FindResultTableView *findResultTableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
+
+@property (nonatomic, strong) UIImageView   *backgroundImageView;
+@property (nonatomic, strong) UIView   *backgroundView;
+
 @end
 
 @implementation FindResultViewController
@@ -43,12 +49,26 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //加入半透明浮层
+    self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.backgroundView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+    [self.view addSubview:self.backgroundView];
+    [self.view sendSubviewToBack:self.backgroundView];
+    
+    //加入模糊图片
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.backgroundImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    [self.backgroundImageView setImageToBlur:self.capImage blurRadius:30 completionBlock:nil];
+    [self.view addSubview:self.backgroundImageView];
+    //    [self.view bringSubviewToFront:self.backgroundImageView];
+    [self.view sendSubviewToBack:self.backgroundImageView];
     
 
     
     self.capImageView = [[UIImageView alloc] initWithImage:self.capImage];
     self.capImageView.backgroundColor = [UIColor yellowColor];
-    self.capImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, 200);
+    self.capImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, 250);
     self.capImageView.contentMode = UIViewContentModeScaleToFill;
 //    self.capImageView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.capImageView];
@@ -67,7 +87,7 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     self.findResultTableView.dataSource = self;
     
     [self.findResultTableView reloadData];
-    self.findResultTableView.backgroundColor = [UIColor blackColor];
+    self.findResultTableView.backgroundColor = [UIColor clearColor];
     self.findResultTableView.hidden = NO;
     
     [self.view addSubview:self.findResultTableView];
@@ -113,13 +133,15 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
     ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FindResultTableViewCellIdentifier forIndexPath:indexPath];
     
+
     // Load data
     NSDictionary *dataDict = self.dataArray[indexPath.row];
     // Sample image
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
     cell.backgroundColor = [UIColor clearColor];
     [cell setupCellWithData:dataDict andImage:image];
-    
+    cell.backgroundView = nil;
+    cell.backgroundColor = [UIColor clearColor];
     //    cell.textLabel.text = self.fakeData[indexPath.row];
     return cell;
 }

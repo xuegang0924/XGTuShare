@@ -34,6 +34,11 @@
         _width = frame.size.width;
         _height = frame.size.height;
         
+        self.autoresizesSubviews = YES;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleTopMargin;
+        self.scrolView.autoresizesSubviews = YES;
+        self.scrolView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleTopMargin;
+  
         
     }
     return self;

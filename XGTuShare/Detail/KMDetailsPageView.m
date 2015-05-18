@@ -7,6 +7,7 @@
 //
 
 #import "KMDetailsPageView.h"
+#import "UIImageView+LBBlurredImage.h"
 
 #define kDefaultImagePagerHeight 375.0f
 #define kDefaultTableViewHeaderMargin 95.0f
@@ -17,6 +18,8 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIButton* imageButton;
+@property (nonatomic,strong) UIImageView *backgroundImageView;
+@property (nonatomic,strong) UIView *backgroundView;
 
 @end
 
@@ -88,6 +91,22 @@
         [self setupBackgroundColor];
     
     [self setupImageButton];
+    
+    
+    //加入半透明浮层
+    self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
+    self.backgroundView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    [self addSubview:self.backgroundView];
+    [self sendSubviewToBack:self.backgroundView];
+    
+    //加入模糊图片
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    self.backgroundImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
+    [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
+    [self addSubview:self.backgroundImageView];
+    //    [self.view bringSubviewToFront:self.backgroundImageView];
+    [self sendSubviewToBack:self.backgroundImageView];
     
 }
 

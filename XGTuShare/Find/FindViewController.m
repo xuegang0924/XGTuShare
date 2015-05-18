@@ -102,7 +102,7 @@
     self.camera.view.frame = self.view.contentBounds;
     
     self.snapButton.center = self.view.contentCenter;
-    self.snapButton.bottom = self.view.height - 15;
+    self.snapButton.bottom = self.view.height - 60;
     
     self.flashButton.center = self.view.contentCenter;
     self.flashButton.top = 5.0f;
