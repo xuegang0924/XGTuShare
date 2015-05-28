@@ -321,6 +321,16 @@
 		1DA914BE1B17220200EE81CB /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA914A21B17220200EE81CB /* SBJsonUTF8Stream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA914BF1B17220200EE81CB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA914A41B17220200EE81CB /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA914C11B17242800EE81CB /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914C01B17242700EE81CB /* libz.1.2.5.dylib */; };
+		1DA914C31B17252000EE81CB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914C21B17252000EE81CB /* ImageIO.framework */; };
+		1DA914C51B17252900EE81CB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914C41B17252900EE81CB /* MapKit.framework */; };
+		1DA914C71B17255800EE81CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914C61B17255800EE81CB /* CFNetwork.framework */; };
+		1DA914C91B17256C00EE81CB /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914C81B17256C00EE81CB /* libsqlite3.0.dylib */; };
+		1DA914CB1B1725DC00EE81CB /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914CA1B1725DC00EE81CB /* libxml2.2.dylib */; };
+		1DA914CD1B1725E700EE81CB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914CC1B1725E700EE81CB /* MobileCoreServices.framework */; };
+		1DA914CF1B1725F000EE81CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914CE1B1725F000EE81CB /* UIKit.framework */; };
+		1DA914D11B1725FB00EE81CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914D01B1725FB00EE81CB /* Foundation.framework */; };
+		1DA914D31B17260500EE81CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914D21B17260500EE81CB /* CoreGraphics.framework */; };
+		1DA914D51B17261B00EE81CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA914D41B17261B00EE81CB /* SystemConfiguration.framework */; };
 		1DE919F31B08618800ADCEF8 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE919F21B08618800ADCEF8 /* UIImageView+LBBlurredImage.m */; };
 		1DE919F71B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE919F61B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.m */; };
 		1DE919F91B08BA6E00ADCEF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE919F81B08BA6E00ADCEF8 /* QuartzCore.framework */; };
@@ -862,6 +872,16 @@
 		1DA914A31B17220200EE81CB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		1DA914A41B17220200EE81CB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		1DA914C01B17242700EE81CB /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		1DA914C21B17252000EE81CB /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1DA914C41B17252900EE81CB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1DA914C61B17255800EE81CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1DA914C81B17256C00EE81CB /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		1DA914CA1B1725DC00EE81CB /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		1DA914CC1B1725E700EE81CB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1DA914CE1B1725F000EE81CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1DA914D01B1725FB00EE81CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DA914D21B17260500EE81CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1DA914D41B17261B00EE81CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1DE919F11B08618800ADCEF8 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		1DE919F21B08618800ADCEF8 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 		1DE919F51B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+VGParallaxHeader.h"; sourceTree = "<group>"; };
@@ -982,6 +1002,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA914D51B17261B00EE81CB /* SystemConfiguration.framework in Frameworks */,
+				1DA914D31B17260500EE81CB /* CoreGraphics.framework in Frameworks */,
+				1DA914D11B1725FB00EE81CB /* Foundation.framework in Frameworks */,
+				1DA914CF1B1725F000EE81CB /* UIKit.framework in Frameworks */,
+				1DA914CD1B1725E700EE81CB /* MobileCoreServices.framework in Frameworks */,
+				1DA914CB1B1725DC00EE81CB /* libxml2.2.dylib in Frameworks */,
+				1DA914C91B17256C00EE81CB /* libsqlite3.0.dylib in Frameworks */,
+				1DA914C71B17255800EE81CB /* CFNetwork.framework in Frameworks */,
+				1DA914C51B17252900EE81CB /* MapKit.framework in Frameworks */,
+				1DA914C31B17252000EE81CB /* ImageIO.framework in Frameworks */,
 				1DA914C11B17242800EE81CB /* libz.1.2.5.dylib in Frameworks */,
 				1DE919F91B08BA6E00ADCEF8 /* QuartzCore.framework in Frameworks */,
 			);
@@ -1652,6 +1682,16 @@
 		1D9392931AF8F75C0081FADA = {
 			isa = PBXGroup;
 			children = (
+				1DA914D41B17261B00EE81CB /* SystemConfiguration.framework */,
+				1DA914D21B17260500EE81CB /* CoreGraphics.framework */,
+				1DA914D01B1725FB00EE81CB /* Foundation.framework */,
+				1DA914CE1B1725F000EE81CB /* UIKit.framework */,
+				1DA914CC1B1725E700EE81CB /* MobileCoreServices.framework */,
+				1DA914CA1B1725DC00EE81CB /* libxml2.2.dylib */,
+				1DA914C81B17256C00EE81CB /* libsqlite3.0.dylib */,
+				1DA914C61B17255800EE81CB /* CFNetwork.framework */,
+				1DA914C41B17252900EE81CB /* MapKit.framework */,
+				1DA914C21B17252000EE81CB /* ImageIO.framework */,
 				1DA914C01B17242700EE81CB /* libz.1.2.5.dylib */,
 				1D93929E1AF8F75C0081FADA /* XGTuShare */,
 				1D9392B81AF8F75C0081FADA /* XGTuShareTests */,
