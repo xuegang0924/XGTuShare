@@ -41,6 +41,11 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 @property (nonatomic, strong) UIImageView   *backgroundImageView;
 @property (nonatomic, strong) UIView   *backgroundView;
 
+@property (nonatomic, strong) NSMutableArray *listDataArray;    //列表数据
+@property (nonatomic, strong) NSMutableArray *foucusDataArray;  //焦点图数据
+
+
+
 @end
 
 @implementation HomeViewController

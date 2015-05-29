@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0A86F61B1871090010C166 /* XGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A86F51B1871090010C166 /* XGHttpRequest.m */; };
 		1D21EC891B09E162007C10C4 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21EC871B09E162007C10C4 /* DetailTableViewController.m */; };
 		1D21EC8A1B09E162007C10C4 /* DetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */; };
 		1D21ECA71B0A10D7007C10C4 /* soundtrack_v~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */; };
@@ -445,6 +446,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0A86F41B1871090010C166 /* XGHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGHttpRequest.h; sourceTree = "<group>"; };
+		1D0A86F51B1871090010C166 /* XGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHttpRequest.m; sourceTree = "<group>"; };
 		1D21EC861B09E162007C10C4 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		1D21EC871B09E162007C10C4 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewController.xib; sourceTree = "<group>"; };
@@ -1042,6 +1045,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0A86F21B1870DB0010C166 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				1D0A86F31B1870DB0010C166 /* XGHttpRequest */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		1D0A86F31B1870DB0010C166 /* XGHttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1D0A86F41B1871090010C166 /* XGHttpRequest.h */,
+				1D0A86F51B1871090010C166 /* XGHttpRequest.m */,
+			);
+			path = XGHttpRequest;
+			sourceTree = "<group>";
+		};
 		1D2916D51AFA64E80087CD2E /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1775,6 +1795,7 @@
 		1D9392E11AF8F9CB0081FADA /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				1D0A86F21B1870DB0010C166 /* Tools */,
 				1D295FD91AFA0CB400A147E2 /* Commen */,
 				1D9393011AF8FCB40081FADA /* Uitils */,
 				1D9392E21AF8F9CB0081FADA /* ThirdLib */,
@@ -2722,6 +2743,7 @@
 				1D3CCDFF1AFB5ECB008702F0 /* HTKDynamicResizingTableViewCell.m in Sources */,
 				1D5E075F1AFC97EA006907C0 /* KMMovieDetailsCommentsCell.m in Sources */,
 				1D5E07BD1AFC9976006907C0 /* EGOImageLoadConnection.m in Sources */,
+				1D0A86F61B1871090010C166 /* XGHttpRequest.m in Sources */,
 				1DA914521B170C2500EE81CB /* ASIDataCompressor.m in Sources */,
 				1DA914561B170C2500EE81CB /* ASIHTTPRequest.m in Sources */,
 				1DF0029E1AFFA42F00D45BDD /* UIImage+Resize.m in Sources */,
