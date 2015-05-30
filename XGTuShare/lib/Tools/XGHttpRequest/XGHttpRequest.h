@@ -28,7 +28,7 @@
 @interface XGHttpRequest : NSObject <ASICacheDelegate, ASIHTTPRequestDelegate, ASIProgressDelegate>
 
 @property (nonatomic, strong) NSURL *url;
-@property (nonatomic, strong) ASIHTTPRequest *ASIRequest;
+@property (nonatomic, strong) ASIHTTPRequest *aSIRequest;
 @property (nonatomic, strong) id<XGHttpRequestDelegate> delegate;
 
 @property (nonatomic, readonly) BOOL isLoading;

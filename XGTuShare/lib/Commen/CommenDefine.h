@@ -26,4 +26,6 @@
 
 
 
+#define KxgHomeRequestAccessToken     @"Authorization"
+
 #endif
