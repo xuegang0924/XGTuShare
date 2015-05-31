@@ -20,6 +20,8 @@
 #import "XGHttpRequest.h"
 #import "JSON.h"
 #import "ListViewModel.h"
+//#import "SDImageCache.h"
+#import "UIImageView+WebCache.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
@@ -50,6 +52,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 @property (nonatomic, strong) XGHttpRequest *httpRequest;       //数据请求
 @property (nonatomic, strong) SBJSON *sbjson;                   //json转dic
 @property (nonatomic, strong) NSMutableDictionary *mdicReciveData;       //数据请求
+@property (nonatomic, strong) NSMutableArray *marrayArticles;     //存放listCell的Model
 
 
 
@@ -72,12 +75,15 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
         self.httpRequest = [[XGHttpRequest alloc] initWithDelegate:self];
         self.httpRequest.url = [NSURL URLWithString:@"http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&sort_by=popularity.desc&page=1"];
         [self.httpRequest createASIHttpRequest];
-        [self.httpRequest startRequestWithCachePolicy:ASIAskServerIfModifiedCachePolicy];
+        [self.httpRequest startRequestWithCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
 
 //        ASIHTTPRequest
         
         //sbjson
         self.sbjson = [[SBJSON alloc] init];
+        
+        //mdataArticles
+        self.marrayArticles = [[NSMutableArray alloc] init];
         
     }
     return self;
@@ -357,24 +363,27 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataArray.count;
+//    return self.dataArray.count;
+    return self.marrayArticles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
     ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundView = nil;
     cell.backgroundColor = [UIColor clearColor];
-    // Load data
-    NSDictionary *dataDict = self.dataArray[indexPath.row];
-    // Sample image
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
-    cell.backgroundColor = [UIColor clearColor];
-    [cell setupCellWithData:dataDict andImage:image];
     
-//    cell.textLabel.text = self.fakeData[indexPath.row];
+    // Load data
+//    NSDictionary *dataDict = self.dataArray[indexPath.row];
+    
+    ListViewModel *modelData = self.marrayArticles[indexPath.row];
+    
+    // Sample image
+//    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
+//    [cell setupCellWithData:dicData andImage:image];
+    
+    [cell setupCellWithModel:modelData];
     return cell;
 }
 
@@ -455,6 +464,17 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
     NSLog(@"requestFinished string:%@",request.responseString);
     
     NSDictionary *dic = [self.sbjson objectWithString:request.responseString];
+    NSDictionary *spDic = [dic objectForKey:@"results"];
+    
+    for (NSDictionary *sdic in spDic) {
+        ListViewModel *model = [[ListViewModel alloc] init];
+        [model setupProperties:sdic];
+        
+        [self.marrayArticles addObject:model];
+    }
+    
+    [self.tableView reloadData];
+    
     NSLog(@"requestFinished dic:%@",dic);
 }
 

@@ -19,6 +19,6 @@
 @property(nonatomic,strong)NSString *commitNum;             //文章评论数
 @property(nonatomic,strong)NSString *location;              //文章创建位置
 
-
+- (void)setupProperties:(NSDictionary *)dictionary;
 
 @end

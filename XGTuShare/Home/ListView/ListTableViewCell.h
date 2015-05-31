@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HTKDynamicResizingTableViewCell.h"
 #import "HTKDynamicResizingCellProtocol.h"
+#import "ListViewModel.h"
 
 #define DEFAULT_CELL_SIZE (CGSize){[[UIScreen mainScreen] bounds].size.width, 85}
 
@@ -16,5 +17,5 @@
 @interface ListTableViewCell : HTKDynamicResizingTableViewCell
 
 - (void)setupCellWithData:(NSDictionary *)data andImage:(UIImage *)image;
-
+- (void)setupCellWithModel:(ListViewModel *)model;
 @end

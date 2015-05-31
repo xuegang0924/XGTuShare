@@ -7,6 +7,7 @@
 //
 
 #import "ListTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface ListTableViewCell ()
 
@@ -181,6 +182,31 @@
     
     self.sampleImageView.image = image;
 }
+
+- (void)setupCellWithModel:(ListViewModel *)model
+{
+    // Pull out sample data
+    if (model == nil) {
+        return;
+    }
+    
+    NSString *nameString = model.articleTitle;
+    NSString *companyString = model.createTime;
+    NSString *bioString = model.articleSummary;
+    
+    // Set values
+    self.nameLabel.text = nameString;
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.companyLabel.text = companyString;
+    self.companyLabel.textColor = [UIColor whiteColor];
+    
+    self.bioLabel.text = bioString;
+    
+    self.sampleImageView.frame = CGRectMake(0, 0, 80, 80);
+    self.sampleImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.sampleImageView sd_setImageWithURL:[NSURL URLWithString:model.articleImageUrl]];
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
