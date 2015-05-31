@@ -11,6 +11,7 @@
 
 @protocol XGHttpRequestDelegate <NSObject>
 
+@optional
 - (void) requestStarted:(ASIHTTPRequest *)request;
 - (void) request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders;
 - (void) request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL;
@@ -40,7 +41,7 @@
 @property (nonatomic, copy) NSString *debugAPI;
 
 - (id) initWithDelegate:(id<XGHttpRequestDelegate>)delegate;
-
+- (void) createASIHttpRequest;
 - (void) updateCachePath;
 - (void) cancelLoad;
 - (void) clearAndCancel;

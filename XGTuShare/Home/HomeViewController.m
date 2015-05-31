@@ -17,13 +17,16 @@
 #import "UIScrollView+VGParallaxHeader.h"
 #import "UIImageView+LBBlurredImage.h"
 #import "DetailTableViewController.h"
+#import "XGHttpRequest.h"
+#import "JSON.h"
+#import "ListViewModel.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
 NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 
-@interface HomeViewController ()
+@interface HomeViewController () <XGHttpRequestDelegate>
 
 @property(nonatomic,strong)UIButton *showCatergoryViewButn;
 @property(nonatomic,strong)UIButton *showTopMenuViewButn;
@@ -44,6 +47,11 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 @property (nonatomic, strong) NSMutableArray *listDataArray;    //列表数据
 @property (nonatomic, strong) NSMutableArray *foucusDataArray;  //焦点图数据
 
+@property (nonatomic, strong) XGHttpRequest *httpRequest;       //数据请求
+@property (nonatomic, strong) SBJSON *sbjson;                   //json转dic
+@property (nonatomic, strong) NSMutableDictionary *mdicReciveData;       //数据请求
+
+
 
 
 @end
@@ -59,7 +67,18 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
         
         
         [self setupDataArray];
+        
+        //httpRequest
+        self.httpRequest = [[XGHttpRequest alloc] initWithDelegate:self];
+        self.httpRequest.url = [NSURL URLWithString:@"http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&sort_by=popularity.desc&page=1"];
+        [self.httpRequest createASIHttpRequest];
+        [self.httpRequest startRequestWithCachePolicy:ASIAskServerIfModifiedCachePolicy];
 
+//        ASIHTTPRequest
+        
+        //sbjson
+        self.sbjson = [[SBJSON alloc] init];
+        
     }
     return self;
 }
@@ -410,6 +429,61 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
     [self.tableView reloadData];
     [self hideTopMenu];
     _isTopMenuShowed = NO;
+}
+
+
+
+#pragma mark -
+#pragma mark XGHttpRequestDelegate
+- (void) requestStarted:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestStarted");
+}
+
+- (void) request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
+{
+    NSLog(@"didReceiveResponseHeaders:%@",responseHeaders);
+}
+
+- (void) request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL
+{
+    NSLog(@"willRedirectToURL:%@",newURL);
+}
+
+- (void) requestFinished:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFinished string:%@",request.responseString);
+    
+    NSDictionary *dic = [self.sbjson objectWithString:request.responseString];
+    NSLog(@"requestFinished dic:%@",dic);
+}
+
+- (void) requestFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFailed");
+}
+
+- (void) requestCanceled:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestCanceled");
+}
+
+- (void) requestRedirected:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestRedirected");
+}
+
+//- (void) request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
+//{
+//    NSString *str = [data JSONFragment];//[[NSString alloc] initWithData:data encoding:NSSymbolStringEncoding];
+//    NSDictionary *dic = [self.sbjson objectWithString:str];
+//
+//    NSLog(@"didReceiveData:%@ \rn dic:%@",data,dic);
+//}
+
+- (void) setProgress:(float)newProgress
+{
+    NSLog(@"setProgress:%f",newProgress);
 }
 
 @end

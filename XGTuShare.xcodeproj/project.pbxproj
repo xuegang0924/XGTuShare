@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D0A86F61B1871090010C166 /* XGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A86F51B1871090010C166 /* XGHttpRequest.m */; };
+		1D12B62F1B1B2F840049CF75 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12B62E1B1B2F840049CF75 /* HomeModel.m */; };
+		1D12B6331B1B2FDF0049CF75 /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12B6321B1B2FDF0049CF75 /* ListViewModel.m */; };
 		1D21EC891B09E162007C10C4 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21EC871B09E162007C10C4 /* DetailTableViewController.m */; };
 		1D21EC8A1B09E162007C10C4 /* DetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */; };
 		1D21ECA71B0A10D7007C10C4 /* soundtrack_v~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */; };
@@ -448,6 +450,10 @@
 /* Begin PBXFileReference section */
 		1D0A86F41B1871090010C166 /* XGHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGHttpRequest.h; sourceTree = "<group>"; };
 		1D0A86F51B1871090010C166 /* XGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHttpRequest.m; sourceTree = "<group>"; };
+		1D12B62D1B1B2F840049CF75 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		1D12B62E1B1B2F840049CF75 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		1D12B6311B1B2FDF0049CF75 /* ListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
+		1D12B6321B1B2FDF0049CF75 /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
 		1D21EC861B09E162007C10C4 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		1D21EC871B09E162007C10C4 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewController.xib; sourceTree = "<group>"; };
@@ -1062,9 +1068,28 @@
 			path = XGHttpRequest;
 			sourceTree = "<group>";
 		};
+		1D12B62C1B1B2F320049CF75 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D12B62D1B1B2F840049CF75 /* HomeModel.h */,
+				1D12B62E1B1B2F840049CF75 /* HomeModel.m */,
+			);
+			path = HomeModel;
+			sourceTree = "<group>";
+		};
+		1D12B6301B1B2FD00049CF75 /* ListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D12B6311B1B2FDF0049CF75 /* ListViewModel.h */,
+				1D12B6321B1B2FDF0049CF75 /* ListViewModel.m */,
+			);
+			path = ListViewModel;
+			sourceTree = "<group>";
+		};
 		1D2916D51AFA64E80087CD2E /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				1D12B6301B1B2FD00049CF75 /* ListViewModel */,
 				1D29170C1AFBCBE30087CD2E /* Data */,
 				1D2916F31AFBBC2C0087CD2E /* MJRefresh */,
 				1D3CCDF51AFB5ECB008702F0 /* HTKDynamicResizingCell */,
@@ -1867,6 +1892,7 @@
 		1D93930D1AF8FD320081FADA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1D12B62C1B1B2F320049CF75 /* HomeModel */,
 				1D2916EF1AFA78AB0087CD2E /* TopMenuView */,
 				1D2916E71AFA75550087CD2E /* CategoryMenuView */,
 				1D2916EA1AFA75550087CD2E /* FocusView */,
@@ -2752,6 +2778,8 @@
 				1DA914B11B17220200EE81CB /* NSObject+SBJSON.m in Sources */,
 				1DA914551B170C2500EE81CB /* ASIFormDataRequest.m in Sources */,
 				1DA9142E1B170B4B00EE81CB /* SDWebImagePrefetcher.m in Sources */,
+				1D12B62F1B1B2F840049CF75 /* HomeModel.m in Sources */,
+				1D12B6331B1B2FDF0049CF75 /* ListViewModel.m in Sources */,
 				1D5E07C61AFC9B52006907C0 /* KMIndexedCollectionView.m in Sources */,
 				1DA914321B170B4B00EE81CB /* UIImage+WebP.m in Sources */,
 				1D5E075D1AFC97EA006907C0 /* KMMovieDetailsCell.m in Sources */,

@@ -11,12 +11,13 @@
 #import "ListTableViewCell.h"
 #import "DetailViewController.h"
 #import "UIImageView+LBBlurredImage.h"
-
+#import "SBJSON.h"
+#import "XGHttpRequest.h"
 
 NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 
 
-@interface FindResultViewController ()
+@interface FindResultViewController () <ASIHTTPRequestDelegate>
 @property (nonatomic,strong) UIImage *capImage;
 @property (nonatomic,strong) UIImageView *capImageView;
 //@property (nonatomic,strong) FindResultView *findResultView;
@@ -38,6 +39,12 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
         self.capImage = image;
         
         self.findResultTableView = [[FindResultTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        
+        
+        //request
+        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"http://m.weather.com.cn/data/101210101.html"]];
+        request.delegate = self;
+        [request startAsynchronous];
 
     }
     
@@ -180,6 +187,55 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 }
 
 
+
+
+#pragma mark -
+#pragma mark XGHttpRequestDelegate
+- (void) requestStarted:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestStarted");
+}
+
+- (void) request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
+{
+    NSLog(@"didReceiveResponseHeaders:%@",responseHeaders);
+}
+
+- (void) request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL
+{
+    NSLog(@"willRedirectToURL:%@",newURL);
+}
+
+- (void) requestFinished:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFinished string:%@",request.responseString);
+    SBJSON *sbjson = [[SBJSON alloc] init];
+    NSDictionary *dic = [sbjson objectWithString:request.responseString];
+    NSLog(@"requestFinished dic:%@",dic);
+}
+
+- (void) requestFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFailed");
+}
+
+- (void) requestCanceled:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestCanceled");
+}
+
+- (void) requestRedirected:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestRedirected");
+}
+
+//- (void) request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
+//{
+////    NSString *str = [data JSONFragment];//[[NSString alloc] initWithData:data encoding:NSSymbolStringEncoding];
+////    NSDictionary *dic = [self.sbjson objectWithString:str];
+//    
+//    NSLog(@"didReceiveData:%@ \rn dic:%@",data);
+//}
 
 
 @end
