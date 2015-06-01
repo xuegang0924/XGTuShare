@@ -10,6 +10,9 @@
 		1D0A86F61B1871090010C166 /* XGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A86F51B1871090010C166 /* XGHttpRequest.m */; };
 		1D12B62F1B1B2F840049CF75 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12B62E1B1B2F840049CF75 /* HomeModel.m */; };
 		1D12B6331B1B2FDF0049CF75 /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12B6321B1B2FDF0049CF75 /* ListViewModel.m */; };
+		1D12B6381B1C35880049CF75 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D12B6361B1C35880049CF75 /* icon@3x.png */; };
+		1D12B6391B1C35880049CF75 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D12B6371B1C35880049CF75 /* icon@2x.png */; };
+		1D12B64D1B1C5D630049CF75 /* LuanchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D12B64C1B1C5D630049CF75 /* LuanchScreen.png */; };
 		1D21EC891B09E162007C10C4 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21EC871B09E162007C10C4 /* DetailTableViewController.m */; };
 		1D21EC8A1B09E162007C10C4 /* DetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */; };
 		1D21ECA71B0A10D7007C10C4 /* soundtrack_v~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D21ECA51B0A10D7007C10C4 /* soundtrack_v~iphone.png */; };
@@ -454,6 +457,9 @@
 		1D12B62E1B1B2F840049CF75 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		1D12B6311B1B2FDF0049CF75 /* ListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
 		1D12B6321B1B2FDF0049CF75 /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
+		1D12B6361B1C35880049CF75 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
+		1D12B6371B1C35880049CF75 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1D12B64C1B1C5D630049CF75 /* LuanchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuanchScreen.png; sourceTree = "<group>"; };
 		1D21EC861B09E162007C10C4 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		1D21EC871B09E162007C10C4 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		1D21EC881B09E162007C10C4 /* DetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewController.xib; sourceTree = "<group>"; };
@@ -1279,6 +1285,9 @@
 		1D295CF11AFA050700A147E2 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1D12B64C1B1C5D630049CF75 /* LuanchScreen.png */,
+				1D12B6361B1C35880049CF75 /* icon@3x.png */,
+				1D12B6371B1C35880049CF75 /* icon@2x.png */,
 				1D29170F1AFBCEC70087CD2E /* Sample Images */,
 				1DF002A01AFFA67500D45BDD /* Camera */,
 				1DF002A71AFFA67500D45BDD /* CopyImages */,
@@ -2464,6 +2473,7 @@
 				1D5E075C1AFC97EA006907C0 /* KMComposeCommentCell.xib in Resources */,
 				1D295E231AFA050C00A147E2 /* sns_login_renren@2x.png in Resources */,
 				1D5E08111AFCAD32006907C0 /* movie_icon@2x.png in Resources */,
+				1D12B6381B1C35880049CF75 /* icon@3x.png in Resources */,
 				1D295E511AFA050C00A147E2 /* vip_p_n@3x.png in Resources */,
 				1D295DFC1AFA050C00A147E2 /* mine_QQ@2x.png in Resources */,
 				1D5E08131AFCAD32006907C0 /* scrat_avatar@2x.png in Resources */,
@@ -2595,6 +2605,7 @@
 				1D295E221AFA050C00A147E2 /* sns_login_qq@3x.png in Resources */,
 				1DF002F21AFFA67500D45BDD /* camera-flash-off.png in Resources */,
 				1DF003071AFFA67500D45BDD /* comment_unlike_p@2x.png in Resources */,
+				1D12B6391B1C35880049CF75 /* icon@2x.png in Resources */,
 				1DF003251AFFA67500D45BDD /* play_ad_forward_f~iphone.png in Resources */,
 				1D295E1A1AFA050C00A147E2 /* PPQ_ShareIcon_WeixinPengyouquanSelect@3x.png in Resources */,
 				1DF003271AFFA67500D45BDD /* play_ad_refresh_f~iphone.png in Resources */,
@@ -2625,6 +2636,7 @@
 				1DF0031F1AFFA67500D45BDD /* pla_share_p.png in Resources */,
 				1D295DF21AFA050C00A147E2 /* player_section_down_p@3x.png in Resources */,
 				1D29170E1AFBCBE30087CD2E /* SampleData.plist in Resources */,
+				1D12B64D1B1C5D630049CF75 /* LuanchScreen.png in Resources */,
 				1D2917421AFBCEC70087CD2E /* pic3.png in Resources */,
 				1D295DD31AFA050C00A147E2 /* arrow_extend.png in Resources */,
 				1D295DEA1AFA050C00A147E2 /* player_downBtn_p.png in Resources */,
@@ -2937,7 +2949,8 @@
 		1D9392C01AF8F75C0081FADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -2963,14 +2976,15 @@
 				);
 				OTHER_LIBTOOLFLAGS = "-objc -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8b61f589-6904-4cd5-81d2-35063df40b8c";
+				PROVISIONING_PROFILE = "2b02c918-1153-44be-9edb-35c93061e0a5";
 			};
 			name = Debug;
 		};
 		1D9392C11AF8F75C0081FADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -2996,7 +3010,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "-objc -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8b61f589-6904-4cd5-81d2-35063df40b8c";
+				PROVISIONING_PROFILE = "2b02c918-1153-44be-9edb-35c93061e0a5";
 			};
 			name = Release;
 		};
