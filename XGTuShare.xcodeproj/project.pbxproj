@@ -342,13 +342,13 @@
 		1DCB3B751B1D9F9C00CF02BE /* ArticleModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB3B6B1B1D9F9C00CF02BE /* ArticleModle.m */; };
 		1DCB3B761B1D9F9C00CF02BE /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB3B6E1B1D9F9C00CF02BE /* HomeModel.m */; };
 		1DCB3B771B1D9F9C00CF02BE /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB3B711B1D9F9C00CF02BE /* ListViewModel.m */; };
-		1DCB3B781B1D9F9C00CF02BE /* UserInfoModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB3B741B1D9F9C00CF02BE /* UserInfoModle.m */; };
 		1DE919F31B08618800ADCEF8 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE919F21B08618800ADCEF8 /* UIImageView+LBBlurredImage.m */; };
 		1DE919F71B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE919F61B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.m */; };
 		1DE919F91B08BA6E00ADCEF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE919F81B08BA6E00ADCEF8 /* QuartzCore.framework */; };
 		1DE91A181B08C4A500ADCEF8 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE91A0E1B08C4A500ADCEF8 /* ALView+PureLayout.m */; };
 		1DE91A191B08C4A500ADCEF8 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE91A101B08C4A500ADCEF8 /* NSArray+PureLayout.m */; };
 		1DE91A1A1B08C4A500ADCEF8 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE91A121B08C4A500ADCEF8 /* NSLayoutConstraint+PureLayout.m */; };
+		1DEE9EC41B1F47CB0016963F /* UserInfoModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */; };
 		1DF002941AFFA3AC00D45BDD /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */; };
 		1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002931AFFA3AC00D45BDD /* UIImage+FixOrientation.m */; };
 		1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002981AFFA42F00D45BDD /* UIImage+Crop.m */; };
@@ -913,8 +913,6 @@
 		1DCB3B6E1B1D9F9C00CF02BE /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		1DCB3B701B1D9F9C00CF02BE /* ListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
 		1DCB3B711B1D9F9C00CF02BE /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
-		1DCB3B731B1D9F9C00CF02BE /* UserInfoModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModle.h; sourceTree = "<group>"; };
-		1DCB3B741B1D9F9C00CF02BE /* UserInfoModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModle.m; sourceTree = "<group>"; };
 		1DE919F11B08618800ADCEF8 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		1DE919F21B08618800ADCEF8 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 		1DE919F51B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+VGParallaxHeader.h"; sourceTree = "<group>"; };
@@ -929,6 +927,8 @@
 		1DE91A131B08C4A500ADCEF8 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
 		1DE91A141B08C4A500ADCEF8 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
 		1DE91A151B08C4A500ADCEF8 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		1DEE9EC21B1F47CB0016963F /* UserInfoModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModle.h; sourceTree = "<group>"; };
+		1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModle.m; sourceTree = "<group>"; };
 		1DF002901AFFA3AC00D45BDD /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
 		1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
 		1DF002921AFFA3AC00D45BDD /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
@@ -2126,10 +2126,10 @@
 		1DCB3B681B1D9F9C00CF02BE /* Modle */ = {
 			isa = PBXGroup;
 			children = (
+				1DEE9EC11B1F47CB0016963F /* UserInfoModel */,
 				1DCB3B691B1D9F9C00CF02BE /* ArticleModle */,
 				1DCB3B6C1B1D9F9C00CF02BE /* HomeModel */,
 				1DCB3B6F1B1D9F9C00CF02BE /* ListViewModel */,
-				1DCB3B721B1D9F9C00CF02BE /* UserInfo */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -2159,15 +2159,6 @@
 				1DCB3B711B1D9F9C00CF02BE /* ListViewModel.m */,
 			);
 			path = ListViewModel;
-			sourceTree = "<group>";
-		};
-		1DCB3B721B1D9F9C00CF02BE /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-				1DCB3B731B1D9F9C00CF02BE /* UserInfoModle.h */,
-				1DCB3B741B1D9F9C00CF02BE /* UserInfoModle.m */,
-			);
-			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		1DE919F41B08B74F00ADCEF8 /* VGParallaxHeader */ = {
@@ -2202,6 +2193,15 @@
 				1DE91A151B08C4A500ADCEF8 /* PureLayoutDefines.h */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		1DEE9EC11B1F47CB0016963F /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE9EC21B1F47CB0016963F /* UserInfoModle.h */,
+				1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */,
+			);
+			path = UserInfoModel;
 			sourceTree = "<group>";
 		};
 		1DF0028F1AFFA3AC00D45BDD /* LLSimpleCamera */ = {
@@ -2803,7 +2803,7 @@
 				1DF003451AFFAF4300D45BDD /* FindResultViewController.m in Sources */,
 				1DF4ED6C1B1758F200E6C0D2 /* FMDatabaseAdditions.m in Sources */,
 				1DA914531B170C2500EE81CB /* ASIDataDecompressor.m in Sources */,
-				1DCB3B781B1D9F9C00CF02BE /* UserInfoModle.m in Sources */,
+				1DEE9EC41B1F47CB0016963F /* UserInfoModle.m in Sources */,
 				1DE91A181B08C4A500ADCEF8 /* ALView+PureLayout.m in Sources */,
 				1DCB3B751B1D9F9C00CF02BE /* ArticleModle.m in Sources */,
 				1DA914A91B17220200EE81CB /* MJIvar.m in Sources */,
@@ -3025,7 +3025,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "-objc -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b4b4280f-80d3-4337-ac01-adfce695611f";
+				PROVISIONING_PROFILE = "2b02c918-1153-44be-9edb-35c93061e0a5";
 			};
 			name = Debug;
 		};
@@ -3058,7 +3058,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "-objc -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b4b4280f-80d3-4337-ac01-adfce695611f";
+				PROVISIONING_PROFILE = "2b02c918-1153-44be-9edb-35c93061e0a5";
 			};
 			name = Release;
 		};

@@ -402,7 +402,8 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"hahhahh");
-    DetailViewController *dvc = [[DetailViewController alloc] init];
+//    DetailViewController *dvc = [[DetailViewController alloc] init];
+    DetailTableViewController *dvc = [[DetailTableViewController alloc] init];
 
     [self.navigationController pushViewController:dvc animated:YES];
     [self hideTabBar];

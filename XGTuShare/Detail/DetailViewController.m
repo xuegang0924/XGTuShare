@@ -146,7 +146,7 @@
 //            [detailsCell.posterImageView setImageURL:[NSURL URLWithString:self.articleDetails.articleImageUrl]];
             detailsCell.posterImageView.image = [UIImage imageNamed:@"movepic1"];
             detailsCell.movieTitleLabel.text = self.articleDetails.articleTitle;
-            detailsCell.genresLabel.text = self.articleDetails.authorName;
+            detailsCell.genresLabel.text = self.articleDetails.articleAuthorName;
             
             cell = detailsCell;
         }
@@ -183,9 +183,9 @@
             if(popularityCell == nil)
                 popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
             
-            popularityCell.voteAverageLabel.text = self.articleDetails.zanNum;
-            popularityCell.voteCountLabel.text = self.articleDetails.zanNum;
-            popularityCell.popularityLabel.text = self.articleDetails.commitNum;
+            popularityCell.voteAverageLabel.text = self.articleDetails.articleZanNum;
+            popularityCell.voteCountLabel.text = self.articleDetails.articleZanNum;
+            popularityCell.popularityLabel.text = self.articleDetails.articleCommitNum;
             
             cell = popularityCell;
         }

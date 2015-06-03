@@ -29,8 +29,8 @@
 
 @property(nonatomic,strong)NSString *userFavorites;                  //用户收藏
 @property(nonatomic,strong)NSString *userArticles;                   //用户发表的文章
-@property(nonatomic,strong)NSString *userFrends;                     //用户的朋友们
-@property(nonatomic,strong)NSString *userBefrends;                   //喜欢用户的朋友们
+@property(nonatomic,strong)NSString *userFriends;                     //用户的朋友们
+@property(nonatomic,strong)NSString *userBefriends;                   //喜欢用户的朋友们
 
 
 - (void)setupProperties:(NSDictionary *)dictionary;
