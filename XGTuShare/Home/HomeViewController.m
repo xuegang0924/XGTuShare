@@ -171,8 +171,8 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 {
     _showTopMenuViewButn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth-100, 20, 50, 50)];
     
-    [_showTopMenuViewButn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_n] forState:UIControlStateNormal];
-    [_showTopMenuViewButn setImage:[UIImage imageNamed: IMG_showCatergoryMenu_p] forState:UIControlStateHighlighted];
+    [_showTopMenuViewButn setImage:[UIImage imageNamed: IMG_showTopMenu_n] forState:UIControlStateNormal];
+    [_showTopMenuViewButn setImage:[UIImage imageNamed: IMG_showTopMenu_p] forState:UIControlStateHighlighted];
     _showTopMenuViewButn.tag = 1;
     [_showTopMenuViewButn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_showTopMenuViewButn];
@@ -187,12 +187,16 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (void)buttonPressed:(UIButton *)button
 {
-    if (button.tag == 0)
+    if (button.tag == 0) //类别按钮
     {
         _iscategoryMenuViewShowed = !_iscategoryMenuViewShowed;
         
         if (_iscategoryMenuViewShowed)
         {
+            if (_isTopMenuShowed)
+            {
+                [self hideTopMenu];
+            }
             [self showCategoryMenu];
         }
         else
@@ -200,12 +204,16 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
             [self hideCategoryMenu];
         }
     }
-    else if (button.tag == 1)
+    else if (button.tag == 1) //顶部按钮
     {
         _isTopMenuShowed = !_isTopMenuShowed;
         
         if (_isTopMenuShowed)
         {
+            if (_iscategoryMenuViewShowed)
+            {
+                [self hideCategoryMenu];
+            }
             [self showTopMenu];
         }
         else
@@ -219,6 +227,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (void)showCategoryMenu
 {
+    _iscategoryMenuViewShowed = YES;
     [_categoryMenuView showMenu];
     [UIView animateWithDuration:0.5 animations:^{
         _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x + _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
@@ -227,6 +236,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (void)hideCategoryMenu
 {
+    _iscategoryMenuViewShowed = NO;
     [_categoryMenuView hideMenu];
     [UIView animateWithDuration:0.5 animations:^{
         _showCatergoryViewButn.frame = CGRectMake(_showCatergoryViewButn.frame.origin.x - _categoryMenuView.frame.size.width, _showCatergoryViewButn.frame.origin.y, _showCatergoryViewButn.frame.size.width, _showCatergoryViewButn.frame.size.height);
@@ -235,6 +245,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (void)showTopMenu
 {
+    _isTopMenuShowed = YES;
     [_topMenuView showMenu];
     [UIView animateWithDuration:0.5 animations:^{
         //                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x + _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);
@@ -243,6 +254,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (void)hideTopMenu
 {
+    _isTopMenuShowed = NO;
     [_topMenuView hideMenu];
     [UIView animateWithDuration:0.5 animations:^{
         //                _showTopMenuViewButn.frame = CGRectMake(_showTopMenuViewButn.frame.origin.x - _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.origin.y, _showTopMenuViewButn.frame.size.width, _showTopMenuViewButn.frame.size.height);

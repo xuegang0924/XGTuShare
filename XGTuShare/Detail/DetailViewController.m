@@ -158,7 +158,7 @@
             if(descriptionCell == nil)
                 descriptionCell = [KMMovieDetailsDescriptionCell movieDetailsDescriptionCell];
             
-            descriptionCell.movieDescriptionLabel.text = self.articleDetails.content;
+            descriptionCell.movieDescriptionLabel.text = self.articleDetails.articleContent;
             
             cell = descriptionCell;
         }

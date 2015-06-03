@@ -102,6 +102,10 @@
         [tabButn showsTouchWhenHighlighted];
         tabButn.backgroundColor = [UIColor clearColor];
         [_tabBarView addSubview:tabButn];
+        
+        if (tabButn.tag == 0) {
+            tabButn.selected = YES;
+        }
     }
     
 }

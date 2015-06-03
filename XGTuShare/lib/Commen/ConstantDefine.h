@@ -17,8 +17,10 @@
 #define  IMG_mine_n             @"myqiyi_p_n"
 #define  IMG_mine_p             @"myqiyi_p_p"
 
-#define  IMG_showCatergoryMenu_n           @"outer_nav_backbtn_s"
-#define  IMG_showCatergoryMenu_p           @"outer_nav_backbtn"
+#define  IMG_showCatergoryMenu_n           @"play_section_menu_n"
+#define  IMG_showCatergoryMenu_p           @"play_section_menu_p"
+#define  IMG_showTopMenu_n                 @"play_section_down"
+#define  IMG_showTopMenu_p                 @"play_section_down_p"
 
 #define  IMG_FOCUSVIEW_1           @"movepic1"
 #define  IMG_FOCUSVIEW_2           @"movepic2"
