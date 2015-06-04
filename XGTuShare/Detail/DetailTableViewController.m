@@ -19,6 +19,9 @@
 #import "KMMovieDetailsViewAllCommentsCell.h"
 #import "KMComposeCommentCell.h"
 
+#import "DetailImageCell.h"
+#import "DetailArticleContentTableViewCell.h"
+
 #import "ArticleModle.h"
 
 
@@ -70,10 +73,13 @@
     
     //设置视差效果tableView
     //焦点图视图
-    _articleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth+100, 300)];
-    [_articleImageView setImage:[UIImage imageNamed:IMG_FOCUSVIEW_3]];
+//    _articleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth+100, 300)];
+//    [_articleImageView setImage:[UIImage imageNamed:IMG_FOCUSVIEW_3]];
     
-    [self.tableView setParallaxHeaderView:_articleImageView
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:[NSString stringWithFormat:@"%@", [DetailImageCell class]] owner:nil options:nil];
+    
+    
+    [self.tableView setParallaxHeaderView:[views firstObject]
                                      mode:VGParallaxHeaderModeCenter
                                    height:200];
     
@@ -161,14 +167,16 @@
             break;
         case 1:
         {
-            KMMovieDetailsDescriptionCell *descriptionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsDescriptionCell"];
+ 
+
+            DetailArticleContentTableViewCell *articleContentCell = [tableView dequeueReusableCellWithIdentifier:@"DetailArticleContentTableViewCell"];
             
-            if(descriptionCell == nil)
-                descriptionCell = [KMMovieDetailsDescriptionCell movieDetailsDescriptionCell];
+            if(articleContentCell == nil)
+                articleContentCell = [DetailArticleContentTableViewCell articleDetailsContentCell];
             
-            descriptionCell.movieDescriptionLabel.text = self.articleDetails.articleContent;
+//            articleContentCell.movieDescriptionLabel.text = self.articleDetails.articleContent;
             
-            cell = descriptionCell;
+            cell = articleContentCell; 
         }
             break;
         case 2:

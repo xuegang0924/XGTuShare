@@ -349,6 +349,10 @@
 		1DE91A191B08C4A500ADCEF8 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE91A101B08C4A500ADCEF8 /* NSArray+PureLayout.m */; };
 		1DE91A1A1B08C4A500ADCEF8 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE91A121B08C4A500ADCEF8 /* NSLayoutConstraint+PureLayout.m */; };
 		1DEE9EC41B1F47CB0016963F /* UserInfoModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */; };
+		1DEE9EC91B20A9340016963F /* DetailImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9EC71B20A9340016963F /* DetailImageCell.m */; };
+		1DEE9ECA1B20A9340016963F /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9EC81B20A9340016963F /* DetailImageCell.xib */; };
+		1DEE9ECE1B20AD930016963F /* DetailArticleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */; };
+		1DEE9ECF1B20AD930016963F /* DetailArticleContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */; };
 		1DF002941AFFA3AC00D45BDD /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */; };
 		1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002931AFFA3AC00D45BDD /* UIImage+FixOrientation.m */; };
 		1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002981AFFA42F00D45BDD /* UIImage+Crop.m */; };
@@ -929,6 +933,12 @@
 		1DE91A151B08C4A500ADCEF8 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		1DEE9EC21B1F47CB0016963F /* UserInfoModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModle.h; sourceTree = "<group>"; };
 		1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModle.m; sourceTree = "<group>"; };
+		1DEE9EC61B20A9340016963F /* DetailImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailImageCell.h; sourceTree = "<group>"; };
+		1DEE9EC71B20A9340016963F /* DetailImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailImageCell.m; sourceTree = "<group>"; };
+		1DEE9EC81B20A9340016963F /* DetailImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailImageCell.xib; sourceTree = "<group>"; };
+		1DEE9ECB1B20AD930016963F /* DetailArticleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailArticleContentTableViewCell.h; sourceTree = "<group>"; };
+		1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailArticleContentTableViewCell.m; sourceTree = "<group>"; };
+		1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailArticleContentTableViewCell.xib; sourceTree = "<group>"; };
 		1DF002901AFFA3AC00D45BDD /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
 		1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
 		1DF002921AFFA3AC00D45BDD /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
@@ -1935,6 +1945,7 @@
 		1D9393291AF912030081FADA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				1DEE9EC51B20A8510016963F /* DetailCells */,
 				1D5E076B1AFC9805006907C0 /* KMDetailsPageView.h */,
 				1D5E076C1AFC9805006907C0 /* KMDetailsPageView.m */,
 				1D5E07C41AFC9B52006907C0 /* KMIndexedCollectionView.h */,
@@ -2202,6 +2213,19 @@
 				1DEE9EC31B1F47CB0016963F /* UserInfoModle.m */,
 			);
 			path = UserInfoModel;
+			sourceTree = "<group>";
+		};
+		1DEE9EC51B20A8510016963F /* DetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE9EC61B20A9340016963F /* DetailImageCell.h */,
+				1DEE9EC71B20A9340016963F /* DetailImageCell.m */,
+				1DEE9EC81B20A9340016963F /* DetailImageCell.xib */,
+				1DEE9ECB1B20AD930016963F /* DetailArticleContentTableViewCell.h */,
+				1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */,
+				1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */,
+			);
+			path = DetailCells;
 			sourceTree = "<group>";
 		};
 		1DF0028F1AFFA3AC00D45BDD /* LLSimpleCamera */ = {
@@ -2603,6 +2627,7 @@
 				1D295E4D1AFA050C00A147E2 /* tooffline.png in Resources */,
 				1D295E4F1AFA050C00A147E2 /* top_bk_p1.png in Resources */,
 				1D29173E1AFBCEC70087CD2E /* Contents.json in Resources */,
+				1DEE9ECF1B20AD930016963F /* DetailArticleContentTableViewCell.xib in Resources */,
 				1D29174F1AFBCEC70087CD2E /* pic7@2x.png in Resources */,
 				1D6CFE6D1B1D590C00324E4F /* MyLaunchImage5.png in Resources */,
 				1D295DE91AFA050C00A147E2 /* player_downBtn_high_p@3x.png in Resources */,
@@ -2696,6 +2721,7 @@
 				1D295E1B1AFA050C00A147E2 /* PPQ_ShareIcon_WeixinSelect@2x.png in Resources */,
 				1D2917391AFBCEC70087CD2E /* pic1.png in Resources */,
 				1D295E491AFA050C00A147E2 /* searchbar_p@3x.png in Resources */,
+				1DEE9ECA1B20A9340016963F /* DetailImageCell.xib in Resources */,
 				1D295E411AFA050C00A147E2 /* recommend_icon_default@3x.png in Resources */,
 				1D9393191AF8FD710081FADA /* HomeViewController.xib in Resources */,
 				1D295E2D1AFA050C00A147E2 /* channel_p_p.png in Resources */,
@@ -2788,6 +2814,7 @@
 				1DA914B91B17220200EE81CB /* SBJsonStreamParserState.m in Sources */,
 				1DA914BA1B17220200EE81CB /* SBJsonStreamWriter.m in Sources */,
 				1D2917081AFBBC2C0087CD2E /* MJRefreshHeaderView.m in Sources */,
+				1DEE9EC91B20A9340016963F /* DetailImageCell.m in Sources */,
 				1DA914AC1B17220200EE81CB /* MJType.m in Sources */,
 				1DA914311B170B4B00EE81CB /* UIImage+MultiFormat.m in Sources */,
 				1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */,
@@ -2807,6 +2834,7 @@
 				1DE91A181B08C4A500ADCEF8 /* ALView+PureLayout.m in Sources */,
 				1DCB3B751B1D9F9C00CF02BE /* ArticleModle.m in Sources */,
 				1DA914A91B17220200EE81CB /* MJIvar.m in Sources */,
+				1DEE9ECE1B20AD930016963F /* DetailArticleContentTableViewCell.m in Sources */,
 				1D2917061AFBBC2C0087CD2E /* MJRefreshConst.m in Sources */,
 				1DA914571B170C2500EE81CB /* ASIInputStream.m in Sources */,
 				1D9393091AF8FCB40081FADA /* CustomCatagory.m in Sources */,
