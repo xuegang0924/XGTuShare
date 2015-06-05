@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailMarkersTableViewCell : UITableViewCell
-
++ (DetailMarkersTableViewCell*) articleDetailsMarkersCell;
 @end

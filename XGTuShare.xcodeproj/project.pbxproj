@@ -367,6 +367,8 @@
 		1DEE9ECA1B20A9340016963F /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9EC81B20A9340016963F /* DetailImageCell.xib */; };
 		1DEE9ECE1B20AD930016963F /* DetailArticleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */; };
 		1DEE9ECF1B20AD930016963F /* DetailArticleContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */; };
+		1DEE9ED31B22053F0016963F /* DetailAuthorInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9ED11B22053F0016963F /* DetailAuthorInfoTableViewCell.m */; };
+		1DEE9ED41B22053F0016963F /* DetailAuthorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9ED21B22053F0016963F /* DetailAuthorInfoTableViewCell.xib */; };
 		1DF002941AFFA3AC00D45BDD /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */; };
 		1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002931AFFA3AC00D45BDD /* UIImage+FixOrientation.m */; };
 		1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002981AFFA42F00D45BDD /* UIImage+Crop.m */; };
@@ -974,6 +976,9 @@
 		1DEE9ECB1B20AD930016963F /* DetailArticleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailArticleContentTableViewCell.h; sourceTree = "<group>"; };
 		1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailArticleContentTableViewCell.m; sourceTree = "<group>"; };
 		1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailArticleContentTableViewCell.xib; sourceTree = "<group>"; };
+		1DEE9ED01B22053F0016963F /* DetailAuthorInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAuthorInfoTableViewCell.h; sourceTree = "<group>"; };
+		1DEE9ED11B22053F0016963F /* DetailAuthorInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailAuthorInfoTableViewCell.m; sourceTree = "<group>"; };
+		1DEE9ED21B22053F0016963F /* DetailAuthorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailAuthorInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1DF002901AFFA3AC00D45BDD /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
 		1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
 		1DF002921AFFA3AC00D45BDD /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
@@ -2256,6 +2261,9 @@
 				1DEE9EC61B20A9340016963F /* DetailImageCell.h */,
 				1DEE9EC71B20A9340016963F /* DetailImageCell.m */,
 				1DEE9EC81B20A9340016963F /* DetailImageCell.xib */,
+				1DEE9ED01B22053F0016963F /* DetailAuthorInfoTableViewCell.h */,
+				1DEE9ED11B22053F0016963F /* DetailAuthorInfoTableViewCell.m */,
+				1DEE9ED21B22053F0016963F /* DetailAuthorInfoTableViewCell.xib */,
 				1DEE9ECB1B20AD930016963F /* DetailArticleContentTableViewCell.h */,
 				1DEE9ECC1B20AD930016963F /* DetailArticleContentTableViewCell.m */,
 				1DEE9ECD1B20AD930016963F /* DetailArticleContentTableViewCell.xib */,
@@ -2792,6 +2800,7 @@
 				1D295DF91AFA050C00A147E2 /* player_upBtn_p@2x.png in Resources */,
 				1DF003461AFFAF4300D45BDD /* FindResultViewController.xib in Resources */,
 				1D295DF71AFA050C00A147E2 /* player_upBtn_high_p@3x.png in Resources */,
+				1DEE9ED41B22053F0016963F /* DetailAuthorInfoTableViewCell.xib in Resources */,
 				1D295DE41AFA050C00A147E2 /* followedBtn_press_p.png in Resources */,
 				1D295E001AFA050C00A147E2 /* mine_weixin@3x.png in Resources */,
 				1DF0032C1AFFA67500D45BDD /* play_comment_send_success@3x.png in Resources */,
@@ -2936,6 +2945,7 @@
 				1DA914551B170C2500EE81CB /* ASIFormDataRequest.m in Sources */,
 				1DA9142E1B170B4B00EE81CB /* SDWebImagePrefetcher.m in Sources */,
 				1DCB3B761B1D9F9C00CF02BE /* HomeModel.m in Sources */,
+				1DEE9ED31B22053F0016963F /* DetailAuthorInfoTableViewCell.m in Sources */,
 				1DCB3B771B1D9F9C00CF02BE /* ListViewModel.m in Sources */,
 				1D5E07C61AFC9B52006907C0 /* KMIndexedCollectionView.m in Sources */,
 				1DA914321B170B4B00EE81CB /* UIImage+WebP.m in Sources */,

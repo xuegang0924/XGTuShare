@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,18 +15,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pdu-ch-fDP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="star_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pdu-ch-fDP">
                         <rect key="frame" x="8" y="26" width="27" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="iZU-sd-iwd"/>
+                            <constraint firstAttribute="height" constant="30" id="xln-xB-daK"/>
+                        </constraints>
                     </imageView>
-                    <view alpha="0.30000001192092896" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-zy-eXQ" userLabel="Separator View">
-                        <rect key="frame" x="18" y="80" width="302" height="1"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-zy-eXQ" userLabel="Separator View">
+                        <rect key="frame" x="-88" y="-44" width="3" height="95"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="uNv-Cm-zUS"/>
+                            <constraint firstAttribute="height" constant="1" id="QeE-bg-hRJ"/>
                         </constraints>
                     </view>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-wI-tDb">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-wI-tDb">
                         <rect key="frame" x="48" y="0.0" width="272" height="81"/>
+                        <color key="backgroundColor" red="0.036227542209999998" green="0.72297190659999999" blue="0.038568029519999998" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xrS-ht-5T1">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,8 +40,28 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ePD-wI-tDb" secondAttribute="trailing" constant="2" id="33m-8t-Aia"/>
+                    <constraint firstItem="ePD-wI-tDb" firstAttribute="leading" secondItem="Pdu-ch-fDP" secondAttribute="trailing" constant="20" id="99s-Vs-Ddg"/>
+                    <constraint firstAttribute="centerY" secondItem="Pdu-ch-fDP" secondAttribute="centerY" id="Bwh-Eh-l14"/>
+                    <constraint firstAttribute="trailing" secondItem="VWU-zy-eXQ" secondAttribute="trailing" constant="1" id="Gdx-4M-DyY"/>
+                    <constraint firstItem="VWU-zy-eXQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="OPR-Wr-Aof"/>
+                    <constraint firstAttribute="bottom" secondItem="ePD-wI-tDb" secondAttribute="bottom" constant="5" id="Q9R-RG-UNM"/>
+                    <constraint firstItem="Pdu-ch-fDP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aHQ-6I-Rg0"/>
+                    <constraint firstAttribute="bottom" secondItem="VWU-zy-eXQ" secondAttribute="bottom" constant="1" id="chE-9x-JcW"/>
+                    <constraint firstAttribute="centerY" secondItem="ePD-wI-tDb" secondAttribute="centerY" id="nhU-2r-iIg"/>
+                    <constraint firstItem="ePD-wI-tDb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="rbe-v2-x5M"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Q9R-RG-UNM"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <point key="canvasLocation" x="457" y="376"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star_icon.png" width="30" height="30"/>
+    </resources>
 </document>

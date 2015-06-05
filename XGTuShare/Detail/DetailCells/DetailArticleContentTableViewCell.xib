@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,31 +20,35 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PnI-4Q-2sS" userLabel="separatorView">
-                        <rect key="frame" x="20" y="116" width="300" height="1"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PnI-4Q-2sS" userLabel="separatorView">
+                        <rect key="frame" x="20" y="117" width="299" height="0.0"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="WCC-Hc-TEo"/>
+                        </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="followBtn_p.png" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-I4-QtD">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="followBtn_p.png" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-I4-QtD">
                         <rect key="frame" x="8" y="52" width="22" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="22" id="7Tp-wO-HUT"/>
-                            <constraint firstAttribute="height" constant="22" id="UlD-Zx-dEB"/>
+                            <constraint firstAttribute="height" constant="22" id="8JC-jG-eEf"/>
+                            <constraint firstAttribute="width" constant="22" id="LG6-ly-PI8"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Fio-fS-JNl" secondAttribute="bottom" constant="8" id="A4V-zJ-ZwE"/>
-                    <constraint firstAttribute="trailing" secondItem="PnI-4Q-2sS" secondAttribute="trailing" constant="2" id="ARx-TJ-wTI"/>
-                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="top" secondItem="Fio-fS-JNl" secondAttribute="bottom" id="DSi-xA-Z8n"/>
-                    <constraint firstItem="Fio-fS-JNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VA6-qb-91Q"/>
-                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fBW-Hi-WGb"/>
-                    <constraint firstItem="EBS-I4-QtD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="h8N-nh-lso"/>
-                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="top" secondItem="Fio-fS-JNl" secondAttribute="bottom" constant="2" id="mJD-eI-XKd"/>
-                    <constraint firstAttribute="trailing" secondItem="Fio-fS-JNl" secondAttribute="trailing" constant="5" id="q7O-P2-VWR"/>
-                    <constraint firstItem="Fio-fS-JNl" firstAttribute="leading" secondItem="EBS-I4-QtD" secondAttribute="trailing" constant="10" id="rqS-dg-2fB"/>
+                    <constraint firstAttribute="centerY" secondItem="Fio-fS-JNl" secondAttribute="centerY" id="GVC-oT-jW5"/>
+                    <constraint firstAttribute="bottom" secondItem="PnI-4Q-2sS" secondAttribute="bottom" constant="1" id="S1q-eU-KA5"/>
+                    <constraint firstItem="Fio-fS-JNl" firstAttribute="leading" secondItem="EBS-I4-QtD" secondAttribute="trailing" constant="20" id="U0D-FT-QN6"/>
+                    <constraint firstAttribute="trailing" secondItem="PnI-4Q-2sS" secondAttribute="trailing" constant="1" id="URo-Hh-fbJ"/>
+                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aRG-19-k6E"/>
+                    <constraint firstAttribute="centerY" secondItem="EBS-I4-QtD" secondAttribute="centerY" id="dgT-tR-vke"/>
+                    <constraint firstAttribute="trailing" secondItem="Fio-fS-JNl" secondAttribute="trailing" id="gDA-mv-pwY"/>
+                    <constraint firstItem="EBS-I4-QtD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hUq-yE-pVM"/>
+                    <constraint firstAttribute="bottom" secondItem="Fio-fS-JNl" secondAttribute="bottom" constant="5" id="jq3-HC-ViA"/>
+                    <constraint firstItem="Fio-fS-JNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="skh-Cm-o1z"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="532" y="337"/>
+            <point key="canvasLocation" x="144" y="115"/>
         </tableViewCell>
     </objects>
     <resources>

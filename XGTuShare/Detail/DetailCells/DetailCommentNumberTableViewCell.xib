@@ -7,22 +7,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="22" id="KGk-i7-Jjw" customClass="DetailCommentNumberTableViewCell">
-            <rect key="frame" x="0.0" y="1" width="320" height="22"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="52" id="KGk-i7-Jjw" customClass="DetailCommentNumberTableViewCell">
+            <rect key="frame" x="0.0" y="-2" width="320" height="52"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一共28条评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bV-gv-3VT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="一共28条评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bV-gv-3VT">
                         <rect key="frame" x="8" y="0.0" width="304" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-Uv-d5p" userLabel="Separator Top View">
+                        <rect key="frame" x="9" y="0.0" width="302" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="awe-HV-dJ5"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feG-iV-kwa" userLabel="Separator Bottom View">
+                        <rect key="frame" x="9" y="50" width="302" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="y4m-Ya-phN"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="bkG-Uv-d5p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="8NS-Uy-Wgy"/>
+                    <constraint firstItem="3bV-gv-3VT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="AHo-mZ-929"/>
+                    <constraint firstAttribute="trailing" secondItem="feG-iV-kwa" secondAttribute="trailing" constant="1" id="Y97-XM-tdU"/>
+                    <constraint firstItem="3bV-gv-3VT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="eiv-hg-6LU"/>
+                    <constraint firstItem="bkG-Uv-d5p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ght-sE-dnM"/>
+                    <constraint firstItem="feG-iV-kwa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="pKq-vH-Pgy"/>
+                    <constraint firstAttribute="trailing" secondItem="bkG-Uv-d5p" secondAttribute="trailing" constant="1" id="tMa-bb-QDL"/>
+                    <constraint firstAttribute="bottom" secondItem="feG-iV-kwa" secondAttribute="bottom" id="zc3-5U-8nt"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="457" y="406"/>
+            <point key="canvasLocation" x="457" y="391"/>
         </tableViewCell>
     </objects>
 </document>

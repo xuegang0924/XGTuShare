@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailCommentsTableViewCell : UITableViewCell
-
++ (DetailCommentsTableViewCell*) articleDetailsCommentsCell;
 @end

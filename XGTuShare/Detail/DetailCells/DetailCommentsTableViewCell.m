@@ -10,6 +10,13 @@
 
 @implementation DetailCommentsTableViewCell
 
++ (DetailCommentsTableViewCell*) articleDetailsCommentsCell
+{
+    DetailCommentsTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailCommentsTableViewCell" owner:self options:nil] objectAtIndex:0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

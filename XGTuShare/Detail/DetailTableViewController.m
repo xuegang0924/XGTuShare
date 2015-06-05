@@ -21,6 +21,12 @@
 
 #import "DetailImageCell.h"
 #import "DetailArticleContentTableViewCell.h"
+#import "DetailLikersTableViewCell.h"
+#import "DetailMarkersTableViewCell.h"
+#import "DetailCommentNumberTableViewCell.h"
+#import "DetailCommentsTableViewCell.h"
+#import "DetailLeaveMessageTableViewCell.h"
+#import "DetailAuthorInfoTableViewCell.h"
 
 #import "ArticleModle.h"
 
@@ -52,7 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //不显示默认的分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 
     //加入半透明浮层
@@ -152,15 +159,15 @@
     switch (indexPath.row) {
         case 0:
         {
-            KMMovieDetailsCell *detailsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCell"];
+            DetailAuthorInfoTableViewCell *detailsCell = [tableView dequeueReusableCellWithIdentifier:@"DetailAuthorInfoTableViewCell"];
             
             if(detailsCell == nil)
-                detailsCell = [KMMovieDetailsCell movieDetailsCell];
+                detailsCell = [DetailAuthorInfoTableViewCell articleDetailsAuthorInfoCell];
             
             //            [detailsCell.posterImageView setImageURL:[NSURL URLWithString:self.articleDetails.articleImageUrl]];
-            detailsCell.posterImageView.image = [UIImage imageNamed:@"movepic1"];
-            detailsCell.movieTitleLabel.text = self.articleDetails.articleTitle;
-            detailsCell.genresLabel.text = self.articleDetails.articleAuthorName;
+//            detailsCell.posterImageView.image = [UIImage imageNamed:@"movepic1"];
+//            detailsCell.movieTitleLabel.text = self.articleDetails.articleTitle;
+//            detailsCell.genresLabel.text = self.articleDetails.articleAuthorName;
             
             cell = detailsCell;
         }
@@ -181,12 +188,16 @@
             break;
         case 2:
         {
-            KMMovieDetailsSimilarMoviesCell *contributionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsSimilarMoviesCell"];
+            
+
+
+            
+            DetailLikersTableViewCell *contributionCell = [tableView dequeueReusableCellWithIdentifier:@"DetailLikersTableViewCell"];
             
             if(contributionCell == nil)
-                contributionCell = [KMMovieDetailsSimilarMoviesCell movieDetailsSimilarMoviesCell];
+                contributionCell = [DetailLikersTableViewCell articleDetailsLikersCell];
             
-            [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//            [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
             cell = contributionCell;
             
@@ -194,64 +205,84 @@
             break;
         case 3:
         {
-            KMMovieDetailsPopularityCell *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
             
-            if(popularityCell == nil)
-                popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
+            DetailMarkersTableViewCell *contributionCell = [tableView dequeueReusableCellWithIdentifier:@"DetailMarkersTableViewCell"];
             
-            popularityCell.voteAverageLabel.text = self.articleDetails.articleZanNum;
-            popularityCell.voteCountLabel.text = self.articleDetails.articleZanNum;
-            popularityCell.popularityLabel.text = self.articleDetails.articleCommitNum;
+            if(contributionCell == nil)
+                contributionCell = [DetailMarkersTableViewCell articleDetailsMarkersCell];
             
-            cell = popularityCell;
+            
+//            KMMovieDetailsPopularityCell *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
+//            
+//            if(popularityCell == nil)
+//                popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
+//            
+//            popularityCell.voteAverageLabel.text = self.articleDetails.articleZanNum;
+//            popularityCell.voteCountLabel.text = self.articleDetails.articleZanNum;
+//            popularityCell.popularityLabel.text = self.articleDetails.articleCommitNum;
+            
+            cell = contributionCell;
         }
             break;
         case 4:
         {
-            KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
+            
+#import "DetailCommentNumberTableViewCell.h"
+
+            DetailCommentNumberTableViewCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"DetailCommentNumberTableViewCell"];
             
             if(commentsCell == nil)
-                commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
+                commentsCell = [DetailCommentNumberTableViewCell articleDetailsCommentNumberCell];
             
-            commentsCell.usernameLabel.text = @"Kevin Mindeguia";
-            commentsCell.commentLabel.text = @"Macaroon croissant I love tiramisu I love chocolate bar chocolate bar. Cheesecake dessert croissant sweet. Muffin gummies gummies biscuit bear claw. ";
-            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"kevin_avatar"]];
+//            commentsCell.usernameLabel.text = @"Kevin Mindeguia";
+//            commentsCell.commentLabel.text = @"Macaroon croissant I love tiramisu I love chocolate bar chocolate bar. Cheesecake dessert croissant sweet. Muffin gummies gummies biscuit bear claw. ";
+//            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"kevin_avatar"]];
             
             cell = commentsCell;
         }
             break;
         case 5:
         {
-            KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
+            DetailCommentsTableViewCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"DetailCommentsTableViewCell"];
             
             if(commentsCell == nil)
-                commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
+                commentsCell = [DetailCommentsTableViewCell articleDetailsCommentsCell];
             
-            commentsCell.usernameLabel.text = @"Andrew Arran";
-            commentsCell.commentLabel.text = @"Chocolate bar carrot cake candy canes oat cake dessert. Topping bear claw dragée. Sugar plum jelly cupcake.";
-            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"scrat_avatar"]];
+//            commentsCell.usernameLabel.text = @"Andrew Arran";
+//            commentsCell.commentLabel.text = @"Chocolate bar carrot cake candy canes oat cake dessert. Topping bear claw dragée. Sugar plum jelly cupcake.";
+//            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"scrat_avatar"]];
             
             cell = commentsCell;
         }
             break;
         case 6:
         {
-            KMMovieDetailsViewAllCommentsCell *viewAllCommentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsViewAllCommentsCell"];
+//            KMMovieDetailsViewAllCommentsCell *viewAllCommentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsViewAllCommentsCell"];
+//            
+//            if(viewAllCommentsCell == nil)
+//                viewAllCommentsCell = [KMMovieDetailsViewAllCommentsCell movieDetailsAllCommentsCell];
             
-            if(viewAllCommentsCell == nil)
-                viewAllCommentsCell = [KMMovieDetailsViewAllCommentsCell movieDetailsAllCommentsCell];
+            DetailCommentsTableViewCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"DetailCommentsTableViewCell"];
             
-            cell = viewAllCommentsCell;
+            if(commentsCell == nil)
+                commentsCell = [DetailCommentsTableViewCell articleDetailsCommentsCell];
+            
+            cell = commentsCell;
         }
             break;
         case 7:
         {
-            KMComposeCommentCell *composeCommentCell = [tableView dequeueReusableCellWithIdentifier:@"KMComposeCommentCell"];
+            DetailLeaveMessageTableViewCell *leaveMessageCell = [tableView dequeueReusableCellWithIdentifier:@"DetailLeaveMessageTableViewCell"];
+
+            if (leaveMessageCell == nil) {
+                leaveMessageCell = [DetailLeaveMessageTableViewCell articleDetailsLeaveMessageCell];
+            }
+//            KMComposeCommentCell *composeCommentCell = [tableView dequeueReusableCellWithIdentifier:@"KMComposeCommentCell"];
+//            
+//            if(composeCommentCell == nil)
+//                composeCommentCell = [KMComposeCommentCell composeCommentsCell];
             
-            if(composeCommentCell == nil)
-                composeCommentCell = [KMComposeCommentCell composeCommentsCell];
-            
-            cell = composeCommentCell;
+            cell = leaveMessageCell;
         }
             break;
         default:
@@ -268,24 +299,26 @@
     CGFloat height = 0;
     
     if (indexPath.row == 0)
-        height = 120;
+        height = 100;
     else if (indexPath.row == 1)
-        height = 119;
+        height = 250;
     else if (indexPath.row == 2)
     {
 //        if ([self.similarMoviesDataSource count] == 0)
 //            height = 0;
 //        else
-            height = 143;
+            height = 70;
     }
     else if (indexPath.row == 3)
-        height = 67;
-    else if (indexPath.row >= 4 && indexPath.row < 6)
-        height = 100;
+        height = 70;
+    else if (indexPath.row == 4)
+        height = 30;
+    else if (indexPath.row == 5)
+        height = 200;
     else if (indexPath.row == 6)
-        height = 49;
+        height = 200;
     else if (indexPath.row == 7)
-        height = 62;
+        height = 30;
     return height;
 }
 

@@ -10,6 +10,13 @@
 
 @implementation DetailLeaveMessageTableViewCell
 
++ (DetailLeaveMessageTableViewCell*) articleDetailsLeaveMessageCell
+{
+    DetailLeaveMessageTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailLeaveMessageTableViewCell" owner:self options:nil] objectAtIndex:0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

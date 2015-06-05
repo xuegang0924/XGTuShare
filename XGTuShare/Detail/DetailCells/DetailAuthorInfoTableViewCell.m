@@ -1,18 +1,18 @@
 //
-//  DetailMarkersTableViewCell.m
+//  DetailAuthorInfoTableViewCell.m
 //  XGTuShare
 //
-//  Created by xuegang on 15/6/5.
+//  Created by xuegang on 15/6/6.
 //  Copyright (c) 2015年 xuegang. All rights reserved.
 //
 
-#import "DetailMarkersTableViewCell.h"
+#import "DetailAuthorInfoTableViewCell.h"
 
-@implementation DetailMarkersTableViewCell
+@implementation DetailAuthorInfoTableViewCell
 
-+ (DetailMarkersTableViewCell*) articleDetailsMarkersCell
++ (DetailAuthorInfoTableViewCell*) articleDetailsAuthorInfoCell
 {
-    DetailMarkersTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailMarkersTableViewCell" owner:self options:nil] objectAtIndex:0];
+    DetailAuthorInfoTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailAuthorInfoTableViewCell" owner:self options:nil] objectAtIndex:0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
