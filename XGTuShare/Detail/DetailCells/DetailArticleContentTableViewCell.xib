@@ -15,26 +15,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="followBtn_p.png" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-I4-QtD">
-                        <rect key="frame" x="14" y="46" width="31" height="33"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Fo8-9E-Lea"/>
-                            <constraint firstAttribute="width" constant="30" id="Qna-ij-VSl"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lallallalal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-fS-JNl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="lallallalal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-fS-JNl">
                         <rect key="frame" x="53" y="8" width="259" height="109"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PnI-4Q-2sS" userLabel="separatorView">
+                        <rect key="frame" x="20" y="116" width="300" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="followBtn_p.png" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-I4-QtD">
+                        <rect key="frame" x="8" y="52" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="7Tp-wO-HUT"/>
+                            <constraint firstAttribute="height" constant="22" id="UlD-Zx-dEB"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="EBS-I4-QtD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="9bK-Ts-qxu"/>
-                    <constraint firstItem="EBS-I4-QtD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="50" id="EJD-rO-buG"/>
+                    <constraint firstAttribute="bottom" secondItem="Fio-fS-JNl" secondAttribute="bottom" constant="8" id="A4V-zJ-ZwE"/>
+                    <constraint firstAttribute="trailing" secondItem="PnI-4Q-2sS" secondAttribute="trailing" constant="2" id="ARx-TJ-wTI"/>
+                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="top" secondItem="Fio-fS-JNl" secondAttribute="bottom" id="DSi-xA-Z8n"/>
+                    <constraint firstItem="Fio-fS-JNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VA6-qb-91Q"/>
+                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fBW-Hi-WGb"/>
+                    <constraint firstItem="EBS-I4-QtD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="h8N-nh-lso"/>
+                    <constraint firstItem="PnI-4Q-2sS" firstAttribute="top" secondItem="Fio-fS-JNl" secondAttribute="bottom" constant="2" id="mJD-eI-XKd"/>
+                    <constraint firstAttribute="trailing" secondItem="Fio-fS-JNl" secondAttribute="trailing" constant="5" id="q7O-P2-VWR"/>
+                    <constraint firstItem="Fio-fS-JNl" firstAttribute="leading" secondItem="EBS-I4-QtD" secondAttribute="trailing" constant="10" id="rqS-dg-2fB"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="173" y="145"/>
+            <point key="canvasLocation" x="532" y="337"/>
         </tableViewCell>
     </objects>
     <resources>
