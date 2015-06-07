@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailMarkersTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UICollectionView *markersCollectionView;
+
+
+
 + (DetailMarkersTableViewCell*) articleDetailsMarkersCell;
 @end

@@ -35,6 +35,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="Fio-fS-JNl" secondAttribute="centerY" id="GVC-oT-jW5"/>
                     <constraint firstAttribute="bottom" secondItem="PnI-4Q-2sS" secondAttribute="bottom" constant="1" id="S1q-eU-KA5"/>
@@ -48,6 +49,9 @@
                     <constraint firstItem="Fio-fS-JNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="skh-Cm-o1z"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLable" destination="Fio-fS-JNl" id="z5X-H4-Fwr"/>
+            </connections>
             <point key="canvasLocation" x="144" y="115"/>
         </tableViewCell>
     </objects>

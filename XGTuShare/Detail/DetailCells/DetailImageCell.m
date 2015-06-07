@@ -10,6 +10,13 @@
 
 @implementation DetailImageCell
 
++ (DetailImageCell*) articleDetailsImageCell
+{
+    DetailImageCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailImageCell" owner:self options:nil] objectAtIndex:0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

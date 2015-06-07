@@ -41,6 +41,9 @@
                     <constraint firstAttribute="centerY" secondItem="gdB-0I-idC" secondAttribute="centerY" id="g7W-D9-0la"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="markersCollectionView" destination="eNc-f8-I8O" id="xeo-82-4xH"/>
+            </connections>
             <point key="canvasLocation" x="457" y="377"/>
         </tableViewCell>
     </objects>

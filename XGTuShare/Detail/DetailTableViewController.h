@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewModel.h"
+
 
 @interface DetailTableViewController : UITableViewController
 
+
+- (id)initWithModel:(ListViewModel *)model;
 @end

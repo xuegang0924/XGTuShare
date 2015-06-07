@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailImageCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *articleImageView;
 
+
++ (DetailImageCell*) articleDetailsImageCell;
 @end

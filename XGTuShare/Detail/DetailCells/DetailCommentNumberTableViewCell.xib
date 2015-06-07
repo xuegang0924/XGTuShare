@@ -46,6 +46,9 @@
                     <constraint firstAttribute="bottom" secondItem="feG-iV-kwa" secondAttribute="bottom" id="zc3-5U-8nt"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentNumLable" destination="3bV-gv-3VT" id="S1a-8D-TCg"/>
+            </connections>
             <point key="canvasLocation" x="457" y="391"/>
         </tableViewCell>
     </objects>

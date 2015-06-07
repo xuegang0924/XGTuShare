@@ -185,7 +185,7 @@
             
             popularityCell.voteAverageLabel.text = self.articleDetails.articleZanNum;
             popularityCell.voteCountLabel.text = self.articleDetails.articleZanNum;
-            popularityCell.popularityLabel.text = self.articleDetails.articleCommitNum;
+            popularityCell.popularityLabel.text = self.articleDetails.articleCommentNum;
             
             cell = popularityCell;
         }

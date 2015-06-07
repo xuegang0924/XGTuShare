@@ -9,15 +9,11 @@
 #import "DetailTableViewController.h"
 #import "UIImageView+LBBlurredImage.h"
 #import "UIScrollView+VGParallaxHeader.h"
+#import "UIImageView+WebCache.h"
 
-#import "KMMovieDetailsCell.h"
-#import "KMMovieDetailsDescriptionCell.h"
-#import "KMMovieDetailsSimilarMoviesCell.h"
-#import "KMSimilarMoviesCollectionViewCell.h"
-#import "KMMovieDetailsPopularityCell.h"
-#import "KMMovieDetailsCommentsCell.h"
-#import "KMMovieDetailsViewAllCommentsCell.h"
-#import "KMComposeCommentCell.h"
+#import "XGHttpRequest.h"
+#import "JSON.h"
+
 
 #import "DetailImageCell.h"
 #import "DetailArticleContentTableViewCell.h"
@@ -30,75 +26,112 @@
 
 #import "ArticleModle.h"
 
+#import "ASIFormDataRequest.h"
 
-#define KMComposeCommentCellIdentifier @"KMComposeCommentCellIdentifier"
 
-@interface DetailTableViewController ()
+//#define KMComposeCommentCellIdentifier @"KMComposeCommentCellIdentifier"
+#define kGetDetailUrl   @"http://192.168.31.178/article/%@"
+
+@interface DetailTableViewController () <ASIHTTPRequestDelegate>
 @property (nonatomic,strong) UIImageView *backgroundImageView;
 @property (nonatomic,strong) UIView *backgroundView;
 
-@property (nonatomic,strong) UIImageView *articleImageView;
+@property (nonatomic,strong) DetailImageCell *articleImageViewCell;
 
 
 @property (nonatomic,strong) ArticleModle *articleDetails;
+@property (nonatomic,strong) ListViewModel *listViewModle;
 
 @end
 
 @implementation DetailTableViewController
 
-- (id)init
+- (id)initWithModel:(ListViewModel *)model
 {
     self = [super init];
     if (self) {
+        //初始化articleModel
         self.articleDetails = [[ArticleModle alloc] init];
+        
+        
+        if (model != nil) {
+            self.listViewModle = model;
 
+             //httpRequest
+            ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:kGetDetailUrl,self.listViewModle.articleID]]];
+            
+            request.delegate = self;
+            [request startAsynchronous];
+           
+            
+        }
+        
+        
     }
     return self;
 }
+
+//- (id)init
+//{
+//    self = [super init];
+//    if (self) {
+//        self.articleDetails = [[ArticleModle alloc] init];
+//        
+//        
+//        
+//
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //不显示默认的分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    self.tableView.backgroundColor = [UIColor clearColor];
 
+    
     //加入半透明浮层
     self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.backgroundView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
     self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-    [[self.view superview] addSubview:self.backgroundView];
-    [[self.view superview] sendSubviewToBack:self.backgroundView];
+//    [[self.view superview] addSubview:self.backgroundView];
+//    [[self.view superview] sendSubviewToBack:self.backgroundView];
+    
+//    [self.tableView addSubview:self.backgroundView];
+//    [self.tableView sendSubviewToBack:self.backgroundView];
     
     //加入模糊图片
     self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     self.backgroundImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight);
     [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
-    [[self.view superview] addSubview:self.backgroundImageView];
-    //    [self.view bringSubviewToFront:self.backgroundImageView];
-    [[self.view superview] sendSubviewToBack:self.backgroundImageView];
+//    [[self.view superview] addSubview:self.backgroundImageView];
+//    [[self.view superview] sendSubviewToBack:self.backgroundImageView];
     
+    [self.tableView addSubview:self.backgroundImageView];
+    [self.tableView sendSubviewToBack:self.backgroundImageView];
+    self.tableView.backgroundView = nil;
     
     //设置视差效果tableView
     //焦点图视图
 //    _articleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX,ScreenY, ScreenWidth+100, 300)];
 //    [_articleImageView setImage:[UIImage imageNamed:IMG_FOCUSVIEW_3]];
     
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:[NSString stringWithFormat:@"%@", [DetailImageCell class]] owner:nil options:nil];
+//    NSArray *views = [[NSBundle mainBundle] loadNibNamed:[NSString stringWithFormat:@"%@", [DetailImageCell class]] owner:nil options:nil];
     
-    
-    [self.tableView setParallaxHeaderView:[views firstObject]
+    self.articleImageViewCell = [DetailImageCell articleDetailsImageCell];
+    [self.tableView setParallaxHeaderView:self.articleImageViewCell
                                      mode:VGParallaxHeaderModeCenter
-                                   height:200];
+                                   height:400];
     
     
     self.tableView.frame = CGRectMake(0,0, ScreenWidth, ScreenHeight);
     // 注册cell
-    [self.tableView registerClass:[KMComposeCommentCell class] forCellReuseIdentifier:KMComposeCommentCellIdentifier];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+//    [self.tableView registerClass:[KMComposeCommentCell class] forCellReuseIdentifier:KMComposeCommentCellIdentifier];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
     //    self.tableView.alpha = 0.5f;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    [self.view setBackgroundColor:[UIColor clearColor]];
     
     [self setupNavigationbarButtons];
 }
@@ -168,7 +201,10 @@
 //            detailsCell.posterImageView.image = [UIImage imageNamed:@"movepic1"];
 //            detailsCell.movieTitleLabel.text = self.articleDetails.articleTitle;
 //            detailsCell.genresLabel.text = self.articleDetails.articleAuthorName;
-            
+            cell.backgroundView = nil;
+            cell.backgroundColor = [UIColor clearColor];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
             cell = detailsCell;
         }
             break;
@@ -387,6 +423,70 @@
 {
     [self.tableView shouldPositionParallaxHeader];
     
+}
+
+//刷新界面
+- (void)refreshWithModle:(ArticleModle *)modle
+{
+    if (modle != nil) {
+        NSString *str = [NSString stringWithFormat:@"http://192.168.31.178%@",modle.articleImageUrl];
+        [self.articleImageViewCell.articleImageView sd_setImageWithURL:[NSURL URLWithString:str]];
+
+    }
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark -
+#pragma mark ASIHttpRequestDelegate
+- (void) requestStarted:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestStarted");
+}
+
+- (void) request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
+{
+    NSLog(@"didReceiveResponseHeaders:%@",responseHeaders);
+}
+
+- (void) request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL
+{
+    NSLog(@"willRedirectToURL:%@",newURL);
+}
+
+- (void) requestFinished:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFinished string:%@",request.responseString);
+    
+    //sbjson
+    SBJSON *sbjson = [[SBJSON alloc] init];
+    NSDictionary *dic = [sbjson objectWithString:request.responseString];
+    
+    [self.articleDetails setupProperties:dic];
+    
+    [self refreshWithModle:self.articleDetails];
+    
+    NSLog(@"requestFinished dic:%@",dic);
+}
+
+- (void) requestFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestFailed");
+}
+
+- (void) requestCanceled:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestCanceled");
+}
+
+- (void) requestRedirected:(ASIHTTPRequest *)request
+{
+    NSLog(@"requestRedirected");
+}
+
+- (void) setProgress:(float)newProgress
+{
+    NSLog(@"setProgress:%f",newProgress);
 }
 
 @end

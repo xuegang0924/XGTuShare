@@ -89,6 +89,13 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentCommentNumLable" destination="vau-XE-yEW" id="1uv-Go-wx8"/>
+                <outlet property="commentContentLable" destination="THf-hD-ann" id="7JF-rZ-RCb"/>
+                <outlet property="commentUserHeadImageView" destination="IZy-GO-dlR" id="WtW-hX-DDP"/>
+                <outlet property="commentUserNickNameLable" destination="egd-Yc-HdF" id="cja-eD-zzR"/>
+                <outlet property="commentZanNumLable" destination="mz9-Wp-vNB" id="hVI-wZ-h5A"/>
+            </connections>
             <point key="canvasLocation" x="522" y="310.5"/>
         </tableViewCell>
     </objects>

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailArticleContentTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *contentLable;
+
 + (DetailArticleContentTableViewCell*) articleDetailsContentCell;
 @end

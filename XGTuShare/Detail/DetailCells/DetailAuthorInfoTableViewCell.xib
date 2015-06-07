@@ -43,6 +43,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="DwP-ys-cJ6" firstAttribute="top" secondItem="tCJ-f4-dcB" secondAttribute="top" id="1CT-be-IuO"/>
                     <constraint firstItem="tCJ-f4-dcB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2bf-jE-w6e"/>
@@ -57,6 +58,12 @@
                     <constraint firstAttribute="bottom" secondItem="VfC-BZ-rCs" secondAttribute="bottom" constant="5" id="zCs-xS-WXj"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="authorHeadImageView" destination="tCJ-f4-dcB" id="45z-KG-9ou"/>
+                <outlet property="authorNickName" destination="DwP-ys-cJ6" id="lKA-iY-m3I"/>
+                <outlet property="createLocation" destination="dj4-Xt-cVk" id="U0x-AD-FjR"/>
+                <outlet property="createTIme" destination="VfC-BZ-rCs" id="wl8-UA-eNX"/>
+            </connections>
             <point key="canvasLocation" x="153" y="246"/>
         </tableViewCell>
     </objects>

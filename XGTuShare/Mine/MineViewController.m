@@ -24,20 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
-    
-    self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
-    [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
-    [self.view addSubview:self.backgroundImageView];
-    [self.view bringSubviewToFront:self.backgroundImageView];
-    
-    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-    [self.view addSubview:self.backgroundView];
-    
+//    
+//    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
+//    
+//    self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
+//    [self.backgroundImageView setImageToBlur:[UIImage imageNamed:IMG_FOCUSVIEW_2] blurRadius:30 completionBlock:nil];
+//    [self.view addSubview:self.backgroundImageView];
+//    [self.view bringSubviewToFront:self.backgroundImageView];
+//    
+//    self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+//    [self.view addSubview:self.backgroundView];
+//    
     self.navigationController.navigationBarHidden = YES;
-    _mineSubView = [[MineSubView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
-    [self.view addSubview:_mineSubView];
+//    _mineSubView = [[MineSubView alloc] initWithFrame:CGRectMake(ScreenX, ScreenY, ScreenWidth, ScreenHeight)];
+//    [self.view addSubview:_mineSubView];
     
     
 

@@ -26,6 +26,9 @@
                     <constraint firstAttribute="trailing" secondItem="GgD-YE-6MK" secondAttribute="trailing" id="JTJ-Nd-7Wb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="leaveMessageTextField" destination="GgD-YE-6MK" id="1qq-Yg-X9c"/>
+            </connections>
             <point key="canvasLocation" x="153" y="246"/>
         </tableViewCell>
     </objects>

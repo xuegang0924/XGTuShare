@@ -11,7 +11,10 @@
 #import "TopMenuView.h"
 #import "FocusView.h"
 //#import "ListView.h"
+
 #import "ListTableViewCell.h"
+#import "HomeListTableViewCell.h"
+
 #import "MJRefresh.h"
 #import "DetailViewController.h"
 #import "UIScrollView+VGParallaxHeader.h"
@@ -24,6 +27,8 @@
 #import "UIImageView+WebCache.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
+
+#define GETURL @"http://192.168.31.178/article_list/"
 
 NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
@@ -69,11 +74,13 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
     if (self) {
         
         
-        [self setupDataArray];
+//        [self setupDataArray];
         
         //httpRequest
         self.httpRequest = [[XGHttpRequest alloc] initWithDelegate:self];
-        self.httpRequest.url = [NSURL URLWithString:@"http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&sort_by=popularity.desc&page=1"];
+//        self.httpRequest.url = [NSURL URLWithString:@"http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&sort_by=popularity.desc&page=1"];
+        
+        self.httpRequest.url = [NSURL URLWithString:GETURL];
         [self.httpRequest createASIHttpRequest];
         [self.httpRequest startRequestWithCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
 
@@ -124,7 +131,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
     
     self.tableView.frame = CGRectMake(0,0, ScreenWidth, ScreenHeight);
     // 注册cell
-    [self.tableView registerClass:[ListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    [self.tableView registerClass:[HomeListTableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 //    self.tableView.alpha = 0.5f;
@@ -382,7 +389,10 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MJTableViewCellIdentifier forIndexPath:indexPath];
+    HomeListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeListTableViewCell"];
+    if (cell == nil) {
+        cell = [HomeListTableViewCell getHomeListTableViewCell];
+    }
     cell.backgroundView = nil;
     cell.backgroundColor = [UIColor clearColor];
     
@@ -395,7 +405,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 //    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%i", arc4random_uniform(10) + 1]];
 //    [cell setupCellWithData:dicData andImage:image];
     
-    [cell setupCellWithModel:modelData];
+    [cell setupHomeListCellWithModel:modelData];
     return cell;
 }
 
@@ -403,7 +413,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 {
     NSLog(@"hahhahh");
 //    DetailViewController *dvc = [[DetailViewController alloc] init];
-    DetailTableViewController *dvc = [[DetailTableViewController alloc] init];
+    DetailTableViewController *dvc = [[DetailTableViewController alloc] initWithModel:self.marrayArticles[indexPath.row]];
 
     [self.navigationController pushViewController:dvc animated:YES];
     [self hideTabBar];
@@ -411,25 +421,26 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    __weak typeof(self) weakSelf = self;
-    CGSize defaultSize = DEFAULT_CELL_SIZE;
+//    __weak typeof(self) weakSelf = self;
+//    CGSize defaultSize = DEFAULT_CELL_SIZE;
     
-    // Create our size
-    CGSize cellSize = [ListTableViewCell sizeForCellWithDefaultSize:defaultSize setupCellBlock:^id(id<HTKDynamicResizingCellProtocol> cellToSetup) {
-        // set values - there's no need to set the image here
-        // because we have height and width constraints set, so
-        // nil image will end up measuring to that size. If you don't
-        // set the image contraints, it will end up being it's 1x intrinsic
-        // size of the image, so you should set a default image when you
-        // create the cell.
-        NSDictionary *dataDict = weakSelf.dataArray[indexPath.row];
-        [((ListTableViewCell *)cellToSetup) setupCellWithData:dataDict andImage:nil];
-        
-        // return cell
-        return cellToSetup;
-    }];
+//    // Create our size
+//    CGSize cellSize = [HomeListTableViewCell sizeForCellWithDefaultSize:defaultSize setupCellBlock:^id(id<HTKDynamicResizingCellProtocol> cellToSetup) {
+//        // set values - there's no need to set the image here
+//        // because we have height and width constraints set, so
+//        // nil image will end up measuring to that size. If you don't
+//        // set the image contraints, it will end up being it's 1x intrinsic
+//        // size of the image, so you should set a default image when you
+//        // create the cell.
+//        NSDictionary *dataDict = weakSelf.dataArray[indexPath.row];
+//        [((ListTableViewCell *)cellToSetup) setupCellWithData:dataDict andImage:nil];
+//        
+//        // return cell
+//        return cellToSetup;
+//    }];
     
-    return cellSize.height;
+    
+    return 200;
 }
 
 
@@ -477,9 +488,9 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
     NSLog(@"requestFinished string:%@",request.responseString);
     
     NSDictionary *dic = [self.sbjson objectWithString:request.responseString];
-    NSDictionary *spDic = [dic objectForKey:@"results"];
+//    NSDictionary *spDic = [dic objectForKey:@"results"];
     
-    for (NSDictionary *sdic in spDic) {
+    for (NSDictionary *sdic in dic) {
         ListViewModel *model = [[ListViewModel alloc] init];
         [model setupProperties:sdic];
         

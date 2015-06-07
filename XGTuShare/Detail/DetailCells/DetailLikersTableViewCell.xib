@@ -31,7 +31,7 @@
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-wI-tDb">
                         <rect key="frame" x="48" y="0.0" width="272" height="81"/>
-                        <color key="backgroundColor" red="0.036227542209999998" green="0.72297190659999999" blue="0.038568029519999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xrS-ht-5T1">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,6 +40,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ePD-wI-tDb" secondAttribute="trailing" constant="2" id="33m-8t-Aia"/>
                     <constraint firstItem="ePD-wI-tDb" firstAttribute="leading" secondItem="Pdu-ch-fDP" secondAttribute="trailing" constant="20" id="99s-Vs-Ddg"/>
@@ -58,6 +59,9 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="likersCollectionView" destination="ePD-wI-tDb" id="E1C-hU-w7D"/>
+            </connections>
             <point key="canvasLocation" x="457" y="376"/>
         </tableViewCell>
     </objects>

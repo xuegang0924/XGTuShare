@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailCommentNumberTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *commentNumLable;
+
+
+
 + (DetailCommentNumberTableViewCell*) articleDetailsCommentNumberCell;
 @end

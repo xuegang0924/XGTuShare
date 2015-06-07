@@ -26,14 +26,14 @@
 
 //likerModle
 @property(nonatomic,strong)NSString *articleZanNum;         //文章赞的人数
-@property(nonatomic,strong)NSString *articleLikers;         //文章被喜欢的人
+@property(nonatomic,strong)NSDictionary *articleLikers;         //文章被喜欢的人
 
 //markerModle
-@property(nonatomic,strong)NSString *articleMarkers;        //文章标签
+@property(nonatomic,strong)NSDictionary *articleMarkers;        //文章标签
 
 //commentsModle
-@property(nonatomic,strong)NSString *articleCommitNum;      //文章评论数
-@property(nonatomic,strong)NSString *articleComments;       //文章评论
+@property(nonatomic,strong)NSString *articleCommentNum;      //文章评论数
+@property(nonatomic,strong)NSDictionary *articleComments;       //文章评论
 
 
 

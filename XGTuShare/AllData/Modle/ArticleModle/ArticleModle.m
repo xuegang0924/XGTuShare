@@ -8,6 +8,21 @@
 
 #import "ArticleModle.h"
 
+#define kArticleID              @"_id"
+#define kArticleAuthorID        @"a_id"
+#define kArticleAuthorName      @"author_name"
+#define kArticleTitle           @"title"
+#define kArticleImageUrl        @"image"
+#define kArticleCreateTime      @"create_time"
+#define kArticleSummary         @"summary"
+#define kArticleContent         @"content"
+#define kArticleLocation        @"position"
+#define kArticleZanNum          @"zan_num"
+#define kArticleLikers          @"likers"
+#define kArticleMarkers         @"tags"
+#define kArticleCommentNum      @"comment_num"
+#define kArticleComments        @"comments"
+
 @implementation ArticleModle
 
 - (id)init
@@ -21,14 +36,42 @@
 
 - (void)setInitProperty
 {
+    _articleID = @"";
+    _articleAuthorID = @"";
+    _articleAuthorName = @"";
+    _articleTitle = @"";
+    _articleImageUrl = @"";
+    _articleCreateTime = @"";
+    _articleSummary = @"";
+    _articleContent = @"";
+    _articleLocation = @"";
+    _articleZanNum = @"";
+    _articleLikers = nil;
+    _articleMarkers = nil;
+    _articleCommentNum = @"";
+    _articleComments = nil;
     
-    _articleImageUrl = [[NSBundle mainBundle] pathForResource:@"movepic1" ofType:@"png"];;
-    _articleTitle = @"呵呵";
-    _articleAuthorName = @"xuegang";
-    _articleCreateTime = @"2015-05-11";
-    _articleContent = @"呵呵”[roar with laughter] 表示笑或微笑的意思，是笑声的拟声词.应该说在互联网发展之前虽有应用但不... 呵呵”两个字。 O(∩_∩)O~ “呵呵”的来源 目前网络上较多人认为“呵呵”的源头是苏轼或者韦庄.呵呵”[roar with laughter] 表示笑或微笑的意思，是笑声的拟声词.应该说在互联网发展之前虽有应用但不... 呵呵”两个字。 O(∩_∩)O~ “呵呵”的来源 目前网络上较多人认为“呵呵”的源头是苏轼或者韦庄.呵呵”[roar with laughter] 表示笑或微笑的意思，是笑声的拟声词.应该说在互联网发展之前虽有应用但不... 呵呵”两个字。 O(∩_∩)O~ “呵呵”的来源 目前网络上较多人认为“呵呵”的源头是苏轼或者韦庄";
-    _articleZanNum = @"99";
-    _articleCommitNum = @"99";
 }
 
+
+- (void)setupProperties:(NSDictionary *)dictionary
+{
+    if (dictionary == nil) {
+        return;
+    }
+    _articleID = [NSString stringWithFormat:@"%@", [[dictionary objectForKey:kArticleID] objectForKey:@"$oid"]];
+    _articleAuthorID = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleAuthorID]];
+    _articleAuthorName = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleAuthorName]];
+    _articleTitle = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleTitle]];
+    _articleImageUrl = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleImageUrl]];
+    _articleCreateTime = [NSString stringWithFormat:@"%@", [[dictionary objectForKey:kArticleCreateTime] objectForKey:@"$date"]];
+    _articleSummary = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleSummary]];
+    _articleContent = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleContent]];
+    _articleLocation = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleLocation]];
+    _articleZanNum = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleZanNum]];
+    _articleLikers = [dictionary objectForKey:kArticleLikers];
+    _articleMarkers = [dictionary objectForKey:kArticleMarkers];
+    _articleCommentNum = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kArticleCommentNum]];
+    _articleComments = [dictionary objectForKey:kArticleComments];
+}
 @end

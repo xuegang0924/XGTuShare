@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailLeaveMessageTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UITextField *leaveMessageTextField;
+
+
+
 + (DetailLeaveMessageTableViewCell*) articleDetailsLeaveMessageCell;
 @end

@@ -17,5 +17,5 @@
 @interface ListTableViewCell : HTKDynamicResizingTableViewCell
 
 - (void)setupCellWithData:(NSDictionary *)data andImage:(UIImage *)image;
-- (void)setupCellWithModel:(ListViewModel *)model;
+
 @end
