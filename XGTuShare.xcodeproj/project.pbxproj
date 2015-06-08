@@ -371,6 +371,8 @@
 		1DEE9ED91B243ED80016963F /* HomeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9ED71B243ED80016963F /* HomeListTableViewCell.xib */; };
 		1DEE9EDD1B249D400016963F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9EDB1B249D400016963F /* DetailViewController.m */; };
 		1DEE9EDE1B249D400016963F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9EDC1B249D400016963F /* DetailViewController.xib */; };
+		1DEE9EE31B25E5070016963F /* CreateArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE9EE11B25E5070016963F /* CreateArticleViewController.m */; };
+		1DEE9EE41B25E5070016963F /* CreateArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE9EE21B25E5070016963F /* CreateArticleViewController.xib */; };
 		1DF002941AFFA3AC00D45BDD /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */; };
 		1DF002951AFFA3AC00D45BDD /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002931AFFA3AC00D45BDD /* UIImage+FixOrientation.m */; };
 		1DF0029D1AFFA42F00D45BDD /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF002981AFFA42F00D45BDD /* UIImage+Crop.m */; };
@@ -984,6 +986,9 @@
 		1DEE9EDA1B249D400016963F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1DEE9EDB1B249D400016963F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1DEE9EDC1B249D400016963F /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1DEE9EE01B25E5070016963F /* CreateArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateArticleViewController.h; sourceTree = "<group>"; };
+		1DEE9EE11B25E5070016963F /* CreateArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateArticleViewController.m; sourceTree = "<group>"; };
+		1DEE9EE21B25E5070016963F /* CreateArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateArticleViewController.xib; sourceTree = "<group>"; };
 		1DF002901AFFA3AC00D45BDD /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
 		1DF002911AFFA3AC00D45BDD /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
 		1DF002921AFFA3AC00D45BDD /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
@@ -1940,6 +1945,7 @@
 		1D93930C1AF8FD320081FADA /* Find */ = {
 			isa = PBXGroup;
 			children = (
+				1DEE9EDF1B25E4D50016963F /* CreateArticle */,
 				1DF0034A1AFFB73900D45BDD /* FindResultTableView.h */,
 				1DF0034B1AFFB73900D45BDD /* FindResultTableView.m */,
 				1DF0028F1AFFA3AC00D45BDD /* LLSimpleCamera */,
@@ -2298,6 +2304,16 @@
 				1D08150D1B2152D000F2EBBA /* DetailMarkersCollectionViewCell.xib */,
 			);
 			path = DetailCells;
+			sourceTree = "<group>";
+		};
+		1DEE9EDF1B25E4D50016963F /* CreateArticle */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE9EE01B25E5070016963F /* CreateArticleViewController.h */,
+				1DEE9EE11B25E5070016963F /* CreateArticleViewController.m */,
+				1DEE9EE21B25E5070016963F /* CreateArticleViewController.xib */,
+			);
+			path = CreateArticle;
 			sourceTree = "<group>";
 		};
 		1DF0028F1AFFA3AC00D45BDD /* LLSimpleCamera */ = {
@@ -2681,6 +2697,7 @@
 				1D2917511AFBCEC70087CD2E /* pic8.png in Resources */,
 				1DF003281AFFA67500D45BDD /* play_ad_refresh~iphone.png in Resources */,
 				1DF0033F1AFFA67500D45BDD /* user_head_save_failed@2x.png in Resources */,
+				1DEE9EE41B25E5070016963F /* CreateArticleViewController.xib in Resources */,
 				1DF003101AFFA67500D45BDD /* mark_success_p@3x.png in Resources */,
 				1DF003151AFFA67500D45BDD /* pla_save_icon_n~iphone.png in Resources */,
 				1D2917451AFBCEC70087CD2E /* pic4.png in Resources */,
@@ -2965,6 +2982,7 @@
 				1DA914BC1B17220200EE81CB /* SBJsonStreamWriterState.m in Sources */,
 				1DE919F71B08B74F00ADCEF8 /* UIScrollView+VGParallaxHeader.m in Sources */,
 				1D0815091B2152BF00F2EBBA /* DetailLikersCollectionViewCell.m in Sources */,
+				1DEE9EE31B25E5070016963F /* CreateArticleViewController.m in Sources */,
 				1D5E07C91AFC9F1B006907C0 /* NSString+MD5.m in Sources */,
 				1D3CCDFE1AFB5ECB008702F0 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
 				1DA914331B170B4B00EE81CB /* UIImageView+HighlightedWebCache.m in Sources */,

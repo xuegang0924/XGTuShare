@@ -156,7 +156,8 @@
 //    ImageViewController *imageVC = [[ImageViewController alloc] initWithImage:image];
 //    [self presentViewController:imageVC animated:NO completion:nil];
     FindResultViewController *frVC = [[FindResultViewController alloc] initWithImage:image];
-    [self presentViewController:frVC animated:YES completion:nil];
+//    [self presentViewController:frVC animated:YES completion:nil];
+    [self.navigationController pushViewController:frVC animated:YES];
 }
 
 - (void)cameraViewController:(LLSimpleCamera *)cameraVC didChangeDevice:(AVCaptureDevice *)device {

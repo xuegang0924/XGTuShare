@@ -14,6 +14,8 @@
 #import "SBJSON.h"
 #import "XGHttpRequest.h"
 
+#import "CreateArticleViewController.h"
+
 NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 
 
@@ -77,8 +79,14 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     self.capImageView.backgroundColor = [UIColor yellowColor];
     self.capImageView.frame = CGRectMake(ScreenX, ScreenY, ScreenWidth, 250);
     self.capImageView.contentMode = UIViewContentModeScaleToFill;
-//    self.capImageView.backgroundColor = [UIColor clearColor];
+    self.capImageView.userInteractionEnabled = YES;
     [self.view addSubview:self.capImageView];
+    //给imageview添加手势
+    UITapGestureRecognizer *imageTab = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewClick)];
+    [self.capImageView addGestureRecognizer:imageTab];
+ 
+
+    
     
     //findResultView
 //    self.findResultView = [[FindResultView alloc] initWithFrame:CGRectMake(ScreenX, 200, ScreenWidth, 300)];
@@ -87,7 +95,7 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 //    self.findResultView.backgroundColor = [UIColor clearColor];
     
     [self setupDataArray];
-    
+//    
     self.findResultTableView.frame = CGRectMake(ScreenX, ScreenY+self.capImageView.frame.size.height, ScreenWidth , ScreenHeight-self.capImageView.frame.size.height);
     [self.findResultTableView registerClass:[ListTableViewCell class] forCellReuseIdentifier:FindResultTableViewCellIdentifier];
     self.findResultTableView.delegate = self;
@@ -102,6 +110,8 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     [self.backBtn addTarget:self action:@selector(backBtnSelect:) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:self.backBtn];
     [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,7 +125,27 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 }
 
 
-
+//imageView单击事件
+-(void)imageViewClick
+{
+//        CreateArticleViewController *caVc = [CreateArticleViewController getCreateArticleViewController];
+        CreateArticleViewController *caVc = [[CreateArticleViewController alloc] init];
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.000 green:0.000 blue:0.000 alpha:0.000];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    //    为什么要加这个呢，shadowImage 是在ios6.0以后才可用的。但是发现5.0也可以用。不过如果你不判断有没有这个方法，
+    //    而直接去调用可能会crash，所以判断下。作用：如果你设置了上面那句话，你会发现是透明了。但是会有一个阴影在，下面的方法就是去阴影
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
+    {
+        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    }
+    //    以上面4句是必须的,但是习惯还是加了下面这句话
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+//    self.navigationController.navigationBar.back
+    [self.navigationController pushViewController:caVc animated:YES];
+//    [self presentViewController:caVc animated:YES completion:nil];
+}
 
 - (void)setupDataArray {
     
