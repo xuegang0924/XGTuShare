@@ -30,7 +30,6 @@
 
 
 //#define KMComposeCommentCellIdentifier @"KMComposeCommentCellIdentifier"
-#define kGetDetailUrl   @"http://192.168.31.178/article/%@"
 
 @interface DetailTableViewController () <ASIHTTPRequestDelegate>
 @property (nonatomic,strong) UIImageView *backgroundImageView;
@@ -58,7 +57,7 @@
             self.listViewModle = model;
 
              //httpRequest
-            ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:kGetDetailUrl,self.listViewModle.articleID]]];
+            ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/article/%@/",URL_TEST,self.listViewModle.articleID]]];
             
             request.delegate = self;
             [request startAsynchronous];
@@ -429,7 +428,7 @@
 - (void)refreshWithModle:(ArticleModle *)modle
 {
     if (modle != nil) {
-        NSString *str = [NSString stringWithFormat:@"http://192.168.31.178%@",modle.articleImageUrl];
+        NSString *str = [NSString stringWithFormat:@"%@/article%@",URL_TEST,modle.articleImageUrl];
         [self.articleImageViewCell.articleImageView sd_setImageWithURL:[NSURL URLWithString:str]];
 
     }

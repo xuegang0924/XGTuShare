@@ -24,7 +24,7 @@
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 
 
-
+#define URL_TEST    @"http://192.168.31.210"
 
 #define KxgHomeRequestAccessToken     @"Authorization"
 

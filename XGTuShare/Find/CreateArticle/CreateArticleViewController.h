@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateArticleViewController : UIViewController
 
+
+
+@interface CreateArticleViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextView *articleContentTextView;
+@property (strong, nonatomic) IBOutlet UITextField *articleContentTextField;
+@property (strong, nonatomic) IBOutlet UILabel *locationLable;
+
+@property (strong, nonatomic) IBOutlet UIButton *sendButton;
+@property (strong, nonatomic) UIImage *sendImage;
+
+
+- (void)setupSendImage:(UIImage *)image;
 
 //+ (CreateArticleViewController*) getCreateArticleViewController;
 @end

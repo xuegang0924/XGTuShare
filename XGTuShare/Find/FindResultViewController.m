@@ -43,10 +43,10 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
         self.findResultTableView = [[FindResultTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         
         
-        //request
-        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"http://m.weather.com.cn/data/101210101.html"]];
-        request.delegate = self;
-        [request startAsynchronous];
+//        //request
+//        ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"http://m.weather.com.cn/data/101210101.html"]];
+//        request.delegate = self;
+//        [request startAsynchronous];
 
     }
     
@@ -129,7 +129,7 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
 -(void)imageViewClick
 {
 //        CreateArticleViewController *caVc = [CreateArticleViewController getCreateArticleViewController];
-        CreateArticleViewController *caVc = [[CreateArticleViewController alloc] init];
+    CreateArticleViewController *caVc = [[CreateArticleViewController alloc] init];
     self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.000 green:0.000 blue:0.000 alpha:0.000];
@@ -143,6 +143,8 @@ NSString *const FindResultTableViewCellIdentifier = @"FindResultCell";
     //    以上面4句是必须的,但是习惯还是加了下面这句话
     [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
 //    self.navigationController.navigationBar.back
+    
+    [caVc setupSendImage:self.capImage];
     [self.navigationController pushViewController:caVc animated:YES];
 //    [self presentViewController:caVc animated:YES completion:nil];
 }

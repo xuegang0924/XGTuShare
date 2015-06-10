@@ -23,7 +23,6 @@
 
 
 
-#define LOCALURL @"http://192.168.31.178%@"
 
 #define kArticleID          @"_id"
 #define kArticleImageUrl    @"image"
@@ -67,7 +66,7 @@
     }
     
     _articleID = [NSString stringWithFormat:@"%@", [[dictionary objectForKey:kArticleID] objectForKey:@"$oid"]];
-    _articleImageUrl = [NSString stringWithFormat:LOCALURL, [dictionary objectForKey:kArticleImageUrl]];
+    _articleImageUrl = [NSString stringWithFormat:@"%@%@",URL_TEST, [dictionary objectForKey:kArticleImageUrl]];
     _articleTitle = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kAritcleTitle]];
     _authorName = [NSString stringWithFormat:@"%@", [dictionary objectForKey:kAuthorName]];
     _createTime = [NSString stringWithFormat:@"%@", [[dictionary objectForKey:kCreateTime] objectForKey:@"$date"]];

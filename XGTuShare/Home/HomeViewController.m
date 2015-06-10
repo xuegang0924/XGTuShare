@@ -28,7 +28,6 @@
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
-#define GETURL @"http://192.168.31.178/article_list/"
 
 NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
 
@@ -80,7 +79,7 @@ NSString *const MJTableViewCellIdentifier = @"HomeViewCell";
         self.httpRequest = [[XGHttpRequest alloc] initWithDelegate:self];
 //        self.httpRequest.url = [NSURL URLWithString:@"http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&sort_by=popularity.desc&page=1"];
         
-        self.httpRequest.url = [NSURL URLWithString:GETURL];
+        self.httpRequest.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/article_list/",URL_TEST]];
         [self.httpRequest createASIHttpRequest];
         [self.httpRequest startRequestWithCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
 

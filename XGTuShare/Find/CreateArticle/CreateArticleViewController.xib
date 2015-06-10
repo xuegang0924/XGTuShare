@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateArticleViewController">
             <connections>
+                <outlet property="articleContentTextField" destination="dz5-XO-qPD" id="HUx-fT-TSh"/>
+                <outlet property="articleContentTextView" destination="Dw6-3d-BhU" id="n5E-ls-oAC"/>
+                <outlet property="locationLable" destination="rN9-iR-6vS" id="3vE-7j-mSZ"/>
+                <outlet property="sendButton" destination="2cs-eU-6UV" id="leG-zd-WY7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,6 +48,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-eU-6UV" userLabel="Send Button">
+                    <rect key="frame" x="186" y="430" width="77" height="49"/>
+                    <state key="normal" image="play_ad_back.png" backgroundImage="like_icon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendButtonClicked:" destination="-1" eventType="touchUpInside" id="YMU-Da-t2V"/>
+                    </connections>
+                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-3d-BhU" userLabel="Article Content Text View">
                     <rect key="frame" x="14" y="19" width="530" height="164"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,5 +71,6 @@
     <resources>
         <image name="like_icon.png" width="22" height="22"/>
         <image name="mark_add_fail_p.png" width="240" height="240"/>
+        <image name="play_ad_back.png" width="88" height="88"/>
     </resources>
 </document>
